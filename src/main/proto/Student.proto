@@ -1,0 +1,11 @@
+package tutorial;  
+  
+option java_package = "com.hoolai.protobuf.test";  
+option java_outer_classname = "StudentProtoBuf";  
+  
+message Student {  
+  optional int64 id = 1;  
+  optional int32 age = 2;  
+  optional bool sex = 3; 
+  optional string name = 4; 
+} 
