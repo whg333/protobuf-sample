@@ -1,6 +1,6 @@
 package Game.Cars;
 
-option java_package = "com.hoolai.protobuf.test";  
+option java_package = "com.whg.protobuf";  
 option java_outer_classname = "ComplexProtoBuf";  
 
 // Car

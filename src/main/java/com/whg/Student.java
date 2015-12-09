@@ -1,10 +1,10 @@
-package com.hoolai;
+package com.whg;
 
 import java.util.List;
 
-import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Descriptors.FieldDescriptor;
-import com.hoolai.protobuf.test.StudentProtoBuf;
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.whg.protobuf.StudentProtoBuf;
 
 public class Student {
 
