@@ -8,7 +8,7 @@ public final class StudentProtoBuf {
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
   }
-  public interface StudentOrBuilder
+  public interface StudentProtoOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
     
     // optional int64 id = 1;
@@ -27,32 +27,32 @@ public final class StudentProtoBuf {
     boolean hasName();
     String getName();
   }
-  public static final class Student extends
+  public static final class StudentProto extends
       com.google.protobuf.GeneratedMessage
-      implements StudentOrBuilder {
-    // Use Student.newBuilder() to construct.
-    private Student(Builder builder) {
+      implements StudentProtoOrBuilder {
+    // Use StudentProto.newBuilder() to construct.
+    private StudentProto(Builder builder) {
       super(builder);
     }
-    private Student(boolean noInit) {}
+    private StudentProto(boolean noInit) {}
     
-    private static final Student defaultInstance;
-    public static Student getDefaultInstance() {
+    private static final StudentProto defaultInstance;
+    public static StudentProto getDefaultInstance() {
       return defaultInstance;
     }
     
-    public Student getDefaultInstanceForType() {
+    public StudentProto getDefaultInstanceForType() {
       return defaultInstance;
     }
     
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.whg.protobuf.StudentProtoBuf.internal_static_tutorial_Student_descriptor;
+      return com.whg.protobuf.StudentProtoBuf.internal_static_tutorial_StudentProto_descriptor;
     }
     
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.whg.protobuf.StudentProtoBuf.internal_static_tutorial_Student_fieldAccessorTable;
+      return com.whg.protobuf.StudentProtoBuf.internal_static_tutorial_StudentProto_fieldAccessorTable;
     }
     
     private int bitField0_;
@@ -183,41 +183,41 @@ public final class StudentProtoBuf {
       return super.writeReplace();
     }
     
-    public static com.whg.protobuf.StudentProtoBuf.Student parseFrom(
+    public static com.whg.protobuf.StudentProtoBuf.StudentProto parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
-    public static com.whg.protobuf.StudentProtoBuf.Student parseFrom(
+    public static com.whg.protobuf.StudentProtoBuf.StudentProto parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data, extensionRegistry)
                .buildParsed();
     }
-    public static com.whg.protobuf.StudentProtoBuf.Student parseFrom(byte[] data)
+    public static com.whg.protobuf.StudentProtoBuf.StudentProto parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data).buildParsed();
     }
-    public static com.whg.protobuf.StudentProtoBuf.Student parseFrom(
+    public static com.whg.protobuf.StudentProtoBuf.StudentProto parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return newBuilder().mergeFrom(data, extensionRegistry)
                .buildParsed();
     }
-    public static com.whg.protobuf.StudentProtoBuf.Student parseFrom(java.io.InputStream input)
+    public static com.whg.protobuf.StudentProtoBuf.StudentProto parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
-    public static com.whg.protobuf.StudentProtoBuf.Student parseFrom(
+    public static com.whg.protobuf.StudentProtoBuf.StudentProto parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return newBuilder().mergeFrom(input, extensionRegistry)
                .buildParsed();
     }
-    public static com.whg.protobuf.StudentProtoBuf.Student parseDelimitedFrom(java.io.InputStream input)
+    public static com.whg.protobuf.StudentProtoBuf.StudentProto parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       Builder builder = newBuilder();
       if (builder.mergeDelimitedFrom(input)) {
@@ -226,7 +226,7 @@ public final class StudentProtoBuf {
         return null;
       }
     }
-    public static com.whg.protobuf.StudentProtoBuf.Student parseDelimitedFrom(
+    public static com.whg.protobuf.StudentProtoBuf.StudentProto parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -237,12 +237,12 @@ public final class StudentProtoBuf {
         return null;
       }
     }
-    public static com.whg.protobuf.StudentProtoBuf.Student parseFrom(
+    public static com.whg.protobuf.StudentProtoBuf.StudentProto parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return newBuilder().mergeFrom(input).buildParsed();
     }
-    public static com.whg.protobuf.StudentProtoBuf.Student parseFrom(
+    public static com.whg.protobuf.StudentProtoBuf.StudentProto parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -252,7 +252,7 @@ public final class StudentProtoBuf {
     
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.whg.protobuf.StudentProtoBuf.Student prototype) {
+    public static Builder newBuilder(com.whg.protobuf.StudentProtoBuf.StudentProto prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -265,18 +265,18 @@ public final class StudentProtoBuf {
     }
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.whg.protobuf.StudentProtoBuf.StudentOrBuilder {
+       implements com.whg.protobuf.StudentProtoBuf.StudentProtoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.whg.protobuf.StudentProtoBuf.internal_static_tutorial_Student_descriptor;
+        return com.whg.protobuf.StudentProtoBuf.internal_static_tutorial_StudentProto_descriptor;
       }
       
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.whg.protobuf.StudentProtoBuf.internal_static_tutorial_Student_fieldAccessorTable;
+        return com.whg.protobuf.StudentProtoBuf.internal_static_tutorial_StudentProto_fieldAccessorTable;
       }
       
-      // Construct using com.whg.protobuf.StudentProtoBuf.Student.newBuilder()
+      // Construct using com.whg.protobuf.StudentProtoBuf.StudentProto.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -312,24 +312,24 @@ public final class StudentProtoBuf {
       
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.whg.protobuf.StudentProtoBuf.Student.getDescriptor();
+        return com.whg.protobuf.StudentProtoBuf.StudentProto.getDescriptor();
       }
       
-      public com.whg.protobuf.StudentProtoBuf.Student getDefaultInstanceForType() {
-        return com.whg.protobuf.StudentProtoBuf.Student.getDefaultInstance();
+      public com.whg.protobuf.StudentProtoBuf.StudentProto getDefaultInstanceForType() {
+        return com.whg.protobuf.StudentProtoBuf.StudentProto.getDefaultInstance();
       }
       
-      public com.whg.protobuf.StudentProtoBuf.Student build() {
-        com.whg.protobuf.StudentProtoBuf.Student result = buildPartial();
+      public com.whg.protobuf.StudentProtoBuf.StudentProto build() {
+        com.whg.protobuf.StudentProtoBuf.StudentProto result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
       
-      private com.whg.protobuf.StudentProtoBuf.Student buildParsed()
+      private com.whg.protobuf.StudentProtoBuf.StudentProto buildParsed()
           throws com.google.protobuf.InvalidProtocolBufferException {
-        com.whg.protobuf.StudentProtoBuf.Student result = buildPartial();
+        com.whg.protobuf.StudentProtoBuf.StudentProto result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(
             result).asInvalidProtocolBufferException();
@@ -337,8 +337,8 @@ public final class StudentProtoBuf {
         return result;
       }
       
-      public com.whg.protobuf.StudentProtoBuf.Student buildPartial() {
-        com.whg.protobuf.StudentProtoBuf.Student result = new com.whg.protobuf.StudentProtoBuf.Student(this);
+      public com.whg.protobuf.StudentProtoBuf.StudentProto buildPartial() {
+        com.whg.protobuf.StudentProtoBuf.StudentProto result = new com.whg.protobuf.StudentProtoBuf.StudentProto(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -363,16 +363,16 @@ public final class StudentProtoBuf {
       }
       
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.whg.protobuf.StudentProtoBuf.Student) {
-          return mergeFrom((com.whg.protobuf.StudentProtoBuf.Student)other);
+        if (other instanceof com.whg.protobuf.StudentProtoBuf.StudentProto) {
+          return mergeFrom((com.whg.protobuf.StudentProtoBuf.StudentProto)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
       
-      public Builder mergeFrom(com.whg.protobuf.StudentProtoBuf.Student other) {
-        if (other == com.whg.protobuf.StudentProtoBuf.Student.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.whg.protobuf.StudentProtoBuf.StudentProto other) {
+        if (other == com.whg.protobuf.StudentProtoBuf.StudentProto.getDefaultInstance()) return this;
         if (other.hasId()) {
           setId(other.getId());
         }
@@ -541,22 +541,22 @@ public final class StudentProtoBuf {
         onChanged();
       }
       
-      // @@protoc_insertion_point(builder_scope:tutorial.Student)
+      // @@protoc_insertion_point(builder_scope:tutorial.StudentProto)
     }
     
     static {
-      defaultInstance = new Student(true);
+      defaultInstance = new StudentProto(true);
       defaultInstance.initFields();
     }
     
-    // @@protoc_insertion_point(class_scope:tutorial.Student)
+    // @@protoc_insertion_point(class_scope:tutorial.StudentProto)
   }
   
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_tutorial_Student_descriptor;
+    internal_static_tutorial_StudentProto_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_tutorial_Student_fieldAccessorTable;
+      internal_static_tutorial_StudentProto_fieldAccessorTable;
   
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -566,24 +566,24 @@ public final class StudentProtoBuf {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\rStudent.proto\022\010tutorial\"=\n\007Student\022\n\n\002" +
-      "id\030\001 \001(\003\022\013\n\003age\030\002 \001(\005\022\013\n\003sex\030\003 \001(\010\022\014\n\004na" +
-      "me\030\004 \001(\tB#\n\020com.whg.protobufB\017StudentPro" +
-      "toBuf"
+      "\n\rStudent.proto\022\010tutorial\"B\n\014StudentProt" +
+      "o\022\n\n\002id\030\001 \001(\003\022\013\n\003age\030\002 \001(\005\022\013\n\003sex\030\003 \001(\010\022" +
+      "\014\n\004name\030\004 \001(\tB#\n\020com.whg.protobufB\017Stude" +
+      "ntProtoBuf"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
         public com.google.protobuf.ExtensionRegistry assignDescriptors(
             com.google.protobuf.Descriptors.FileDescriptor root) {
           descriptor = root;
-          internal_static_tutorial_Student_descriptor =
+          internal_static_tutorial_StudentProto_descriptor =
             getDescriptor().getMessageTypes().get(0);
-          internal_static_tutorial_Student_fieldAccessorTable = new
+          internal_static_tutorial_StudentProto_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_tutorial_Student_descriptor,
+              internal_static_tutorial_StudentProto_descriptor,
               new java.lang.String[] { "Id", "Age", "Sex", "Name", },
-              com.whg.protobuf.StudentProtoBuf.Student.class,
-              com.whg.protobuf.StudentProtoBuf.Student.Builder.class);
+              com.whg.protobuf.StudentProtoBuf.StudentProto.class,
+              com.whg.protobuf.StudentProtoBuf.StudentProto.Builder.class);
           return null;
         }
       };
