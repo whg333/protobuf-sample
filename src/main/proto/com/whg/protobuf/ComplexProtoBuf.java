@@ -10,60 +10,232 @@ public final class ComplexProtoBuf {
   }
   public interface CarOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
-    
+
     // required string model = 1;
+    /**
+     * <code>required string model = 1;</code>
+     *
+     * <pre>
+     * Model name
+     * </pre>
+     */
     boolean hasModel();
-    String getModel();
-    
+    /**
+     * <code>required string model = 1;</code>
+     *
+     * <pre>
+     * Model name
+     * </pre>
+     */
+    java.lang.String getModel();
+    /**
+     * <code>required string model = 1;</code>
+     *
+     * <pre>
+     * Model name
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getModelBytes();
+
     // required .Game.Cars.Car.Vendor vendor = 2;
+    /**
+     * <code>required .Game.Cars.Car.Vendor vendor = 2;</code>
+     *
+     * <pre>
+     * Vendor information
+     * </pre>
+     */
     boolean hasVendor();
+    /**
+     * <code>required .Game.Cars.Car.Vendor vendor = 2;</code>
+     *
+     * <pre>
+     * Vendor information
+     * </pre>
+     */
     com.whg.protobuf.ComplexProtoBuf.Car.Vendor getVendor();
+    /**
+     * <code>required .Game.Cars.Car.Vendor vendor = 2;</code>
+     *
+     * <pre>
+     * Vendor information
+     * </pre>
+     */
     com.whg.protobuf.ComplexProtoBuf.Car.VendorOrBuilder getVendorOrBuilder();
-    
+
     // optional .Game.Cars.Car.Speed speed = 3 [default = FAST];
+    /**
+     * <code>optional .Game.Cars.Car.Speed speed = 3 [default = FAST];</code>
+     *
+     * <pre>
+     * Car speed
+     * </pre>
+     */
     boolean hasSpeed();
+    /**
+     * <code>optional .Game.Cars.Car.Speed speed = 3 [default = FAST];</code>
+     *
+     * <pre>
+     * Car speed
+     * </pre>
+     */
     com.whg.protobuf.ComplexProtoBuf.Car.Speed getSpeed();
   }
+  /**
+   * Protobuf type {@code Game.Cars.Car}
+   *
+   * <pre>
+   * Car
+   * </pre>
+   */
   public static final class Car extends
       com.google.protobuf.GeneratedMessage
       implements CarOrBuilder {
     // Use Car.newBuilder() to construct.
-    private Car(Builder builder) {
+    private Car(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
+      this.unknownFields = builder.getUnknownFields();
     }
-    private Car(boolean noInit) {}
-    
+    private Car(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
     private static final Car defaultInstance;
     public static Car getDefaultInstance() {
       return defaultInstance;
     }
-    
+
     public Car getDefaultInstanceForType() {
       return defaultInstance;
     }
-    
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Car(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              model_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                subBuilder = vendor_.toBuilder();
+              }
+              vendor_ = input.readMessage(com.whg.protobuf.ComplexProtoBuf.Car.Vendor.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(vendor_);
+                vendor_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000002;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+              com.whg.protobuf.ComplexProtoBuf.Car.Speed value = com.whg.protobuf.ComplexProtoBuf.Car.Speed.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(3, rawValue);
+              } else {
+                bitField0_ |= 0x00000004;
+                speed_ = value;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_descriptor;
     }
-    
+
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_fieldAccessorTable;
+      return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.whg.protobuf.ComplexProtoBuf.Car.class, com.whg.protobuf.ComplexProtoBuf.Car.Builder.class);
     }
-    
+
+    public static com.google.protobuf.Parser<Car> PARSER =
+        new com.google.protobuf.AbstractParser<Car>() {
+      public Car parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Car(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Car> getParserForType() {
+      return PARSER;
+    }
+
+    /**
+     * Protobuf enum {@code Game.Cars.Car.Speed}
+     *
+     * <pre>
+     * Car speed enum
+     * </pre>
+     */
     public enum Speed
         implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>FAST = 1;</code>
+       */
       FAST(0, 1),
+      /**
+       * <code>SUPERFAST = 2;</code>
+       */
       SUPERFAST(1, 2),
       ;
-      
+
+      /**
+       * <code>FAST = 1;</code>
+       */
       public static final int FAST_VALUE = 1;
+      /**
+       * <code>SUPERFAST = 2;</code>
+       */
       public static final int SUPERFAST_VALUE = 2;
-      
-      
+
+
       public final int getNumber() { return value; }
-      
+
       public static Speed valueOf(int value) {
         switch (value) {
           case 1: return FAST;
@@ -71,7 +243,7 @@ public final class ComplexProtoBuf {
           default: return null;
         }
       }
-      
+
       public static com.google.protobuf.Internal.EnumLiteMap<Speed>
           internalGetValueMap() {
         return internalValueMap;
@@ -83,7 +255,7 @@ public final class ComplexProtoBuf {
                 return Speed.valueOf(number);
               }
             };
-      
+
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
         return getDescriptor().getValues().get(index);
@@ -96,11 +268,9 @@ public final class ComplexProtoBuf {
           getDescriptor() {
         return com.whg.protobuf.ComplexProtoBuf.Car.getDescriptor().getEnumTypes().get(0);
       }
-      
-      private static final Speed[] VALUES = {
-        FAST, SUPERFAST, 
-      };
-      
+
+      private static final Speed[] VALUES = values();
+
       public static Speed valueOf(
           com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
@@ -109,126 +279,323 @@ public final class ComplexProtoBuf {
         }
         return VALUES[desc.getIndex()];
       }
-      
+
       private final int index;
       private final int value;
-      
+
       private Speed(int index, int value) {
         this.index = index;
         this.value = value;
       }
-      
+
       // @@protoc_insertion_point(enum_scope:Game.Cars.Car.Speed)
     }
-    
+
     public interface VendorOrBuilder
         extends com.google.protobuf.MessageOrBuilder {
-      
+
       // required string name = 1;
+      /**
+       * <code>required string name = 1;</code>
+       */
       boolean hasName();
-      String getName();
-      
+      /**
+       * <code>required string name = 1;</code>
+       */
+      java.lang.String getName();
+      /**
+       * <code>required string name = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getNameBytes();
+
       // optional .Game.Cars.Car.Vendor.Address address = 2;
+      /**
+       * <code>optional .Game.Cars.Car.Vendor.Address address = 2;</code>
+       */
       boolean hasAddress();
+      /**
+       * <code>optional .Game.Cars.Car.Vendor.Address address = 2;</code>
+       */
       com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address getAddress();
+      /**
+       * <code>optional .Game.Cars.Car.Vendor.Address address = 2;</code>
+       */
       com.whg.protobuf.ComplexProtoBuf.Car.Vendor.AddressOrBuilder getAddressOrBuilder();
     }
+    /**
+     * Protobuf type {@code Game.Cars.Car.Vendor}
+     *
+     * <pre>
+     * Car Vendor
+     * </pre>
+     */
     public static final class Vendor extends
         com.google.protobuf.GeneratedMessage
         implements VendorOrBuilder {
       // Use Vendor.newBuilder() to construct.
-      private Vendor(Builder builder) {
+      private Vendor(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
+        this.unknownFields = builder.getUnknownFields();
       }
-      private Vendor(boolean noInit) {}
-      
+      private Vendor(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
       private static final Vendor defaultInstance;
       public static Vendor getDefaultInstance() {
         return defaultInstance;
       }
-      
+
       public Vendor getDefaultInstanceForType() {
         return defaultInstance;
       }
-      
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Vendor(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 10: {
+                bitField0_ |= 0x00000001;
+                name_ = input.readBytes();
+                break;
+              }
+              case 18: {
+                com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.Builder subBuilder = null;
+                if (((bitField0_ & 0x00000002) == 0x00000002)) {
+                  subBuilder = address_.toBuilder();
+                }
+                address_ = input.readMessage(com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.PARSER, extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(address_);
+                  address_ = subBuilder.buildPartial();
+                }
+                bitField0_ |= 0x00000002;
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Vendor_descriptor;
       }
-      
+
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Vendor_fieldAccessorTable;
+        return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Vendor_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.whg.protobuf.ComplexProtoBuf.Car.Vendor.class, com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Builder.class);
       }
-      
+
+      public static com.google.protobuf.Parser<Vendor> PARSER =
+          new com.google.protobuf.AbstractParser<Vendor>() {
+        public Vendor parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Vendor(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Vendor> getParserForType() {
+        return PARSER;
+      }
+
       public interface AddressOrBuilder
           extends com.google.protobuf.MessageOrBuilder {
-        
+
         // required string country = 1;
+        /**
+         * <code>required string country = 1;</code>
+         */
         boolean hasCountry();
-        String getCountry();
+        /**
+         * <code>required string country = 1;</code>
+         */
+        java.lang.String getCountry();
+        /**
+         * <code>required string country = 1;</code>
+         */
+        com.google.protobuf.ByteString
+            getCountryBytes();
       }
+      /**
+       * Protobuf type {@code Game.Cars.Car.Vendor.Address}
+       *
+       * <pre>
+       * Car Vendor Address
+       * </pre>
+       */
       public static final class Address extends
           com.google.protobuf.GeneratedMessage
           implements AddressOrBuilder {
         // Use Address.newBuilder() to construct.
-        private Address(Builder builder) {
+        private Address(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
           super(builder);
+          this.unknownFields = builder.getUnknownFields();
         }
-        private Address(boolean noInit) {}
-        
+        private Address(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
         private static final Address defaultInstance;
         public static Address getDefaultInstance() {
           return defaultInstance;
         }
-        
+
         public Address getDefaultInstanceForType() {
           return defaultInstance;
         }
-        
+
+        private final com.google.protobuf.UnknownFieldSet unknownFields;
+        @java.lang.Override
+        public final com.google.protobuf.UnknownFieldSet
+            getUnknownFields() {
+          return this.unknownFields;
+        }
+        private Address(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          initFields();
+          int mutable_bitField0_ = 0;
+          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+              com.google.protobuf.UnknownFieldSet.newBuilder();
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!parseUnknownField(input, unknownFields,
+                                         extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
+                case 10: {
+                  bitField0_ |= 0x00000001;
+                  country_ = input.readBytes();
+                  break;
+                }
+              }
+            }
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(this);
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this);
+          } finally {
+            this.unknownFields = unknownFields.build();
+            makeExtensionsImmutable();
+          }
+        }
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Vendor_Address_descriptor;
         }
-        
+
         protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Vendor_Address_fieldAccessorTable;
+          return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Vendor_Address_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.class, com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.Builder.class);
         }
-        
+
+        public static com.google.protobuf.Parser<Address> PARSER =
+            new com.google.protobuf.AbstractParser<Address>() {
+          public Address parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Address(input, extensionRegistry);
+          }
+        };
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<Address> getParserForType() {
+          return PARSER;
+        }
+
         private int bitField0_;
         // required string country = 1;
         public static final int COUNTRY_FIELD_NUMBER = 1;
-        private Object country_;
+        private java.lang.Object country_;
+        /**
+         * <code>required string country = 1;</code>
+         */
         public boolean hasCountry() {
           return ((bitField0_ & 0x00000001) == 0x00000001);
         }
-        public String getCountry() {
-          Object ref = country_;
-          if (ref instanceof String) {
-            return (String) ref;
+        /**
+         * <code>required string country = 1;</code>
+         */
+        public java.lang.String getCountry() {
+          java.lang.Object ref = country_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
           } else {
             com.google.protobuf.ByteString bs = 
                 (com.google.protobuf.ByteString) ref;
-            String s = bs.toStringUtf8();
-            if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
               country_ = s;
             }
             return s;
           }
         }
-        private com.google.protobuf.ByteString getCountryBytes() {
-          Object ref = country_;
-          if (ref instanceof String) {
+        /**
+         * <code>required string country = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getCountryBytes() {
+          java.lang.Object ref = country_;
+          if (ref instanceof java.lang.String) {
             com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
             country_ = b;
             return b;
           } else {
             return (com.google.protobuf.ByteString) ref;
           }
         }
-        
+
         private void initFields() {
           country_ = "";
         }
@@ -236,7 +603,7 @@ public final class ComplexProtoBuf {
         public final boolean isInitialized() {
           byte isInitialized = memoizedIsInitialized;
           if (isInitialized != -1) return isInitialized == 1;
-          
+
           if (!hasCountry()) {
             memoizedIsInitialized = 0;
             return false;
@@ -244,7 +611,7 @@ public final class ComplexProtoBuf {
           memoizedIsInitialized = 1;
           return true;
         }
-        
+
         public void writeTo(com.google.protobuf.CodedOutputStream output)
                             throws java.io.IOException {
           getSerializedSize();
@@ -253,12 +620,12 @@ public final class ComplexProtoBuf {
           }
           getUnknownFields().writeTo(output);
         }
-        
+
         private int memoizedSerializedSize = -1;
         public int getSerializedSize() {
           int size = memoizedSerializedSize;
           if (size != -1) return size;
-        
+
           size = 0;
           if (((bitField0_ & 0x00000001) == 0x00000001)) {
             size += com.google.protobuf.CodedOutputStream
@@ -268,92 +635,87 @@ public final class ComplexProtoBuf {
           memoizedSerializedSize = size;
           return size;
         }
-        
+
+        private static final long serialVersionUID = 0L;
         @java.lang.Override
-        protected Object writeReplace() throws java.io.ObjectStreamException {
+        protected java.lang.Object writeReplace()
+            throws java.io.ObjectStreamException {
           return super.writeReplace();
         }
-        
+
         public static com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address parseFrom(
             com.google.protobuf.ByteString data)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return newBuilder().mergeFrom(data).buildParsed();
+          return PARSER.parseFrom(data);
         }
         public static com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address parseFrom(
             com.google.protobuf.ByteString data,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return newBuilder().mergeFrom(data, extensionRegistry)
-                   .buildParsed();
+          return PARSER.parseFrom(data, extensionRegistry);
         }
         public static com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address parseFrom(byte[] data)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return newBuilder().mergeFrom(data).buildParsed();
+          return PARSER.parseFrom(data);
         }
         public static com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address parseFrom(
             byte[] data,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return newBuilder().mergeFrom(data, extensionRegistry)
-                   .buildParsed();
+          return PARSER.parseFrom(data, extensionRegistry);
         }
         public static com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address parseFrom(java.io.InputStream input)
             throws java.io.IOException {
-          return newBuilder().mergeFrom(input).buildParsed();
+          return PARSER.parseFrom(input);
         }
         public static com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address parseFrom(
             java.io.InputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          return newBuilder().mergeFrom(input, extensionRegistry)
-                   .buildParsed();
+          return PARSER.parseFrom(input, extensionRegistry);
         }
         public static com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address parseDelimitedFrom(java.io.InputStream input)
             throws java.io.IOException {
-          Builder builder = newBuilder();
-          if (builder.mergeDelimitedFrom(input)) {
-            return builder.buildParsed();
-          } else {
-            return null;
-          }
+          return PARSER.parseDelimitedFrom(input);
         }
         public static com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address parseDelimitedFrom(
             java.io.InputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          Builder builder = newBuilder();
-          if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-            return builder.buildParsed();
-          } else {
-            return null;
-          }
+          return PARSER.parseDelimitedFrom(input, extensionRegistry);
         }
         public static com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address parseFrom(
             com.google.protobuf.CodedInputStream input)
             throws java.io.IOException {
-          return newBuilder().mergeFrom(input).buildParsed();
+          return PARSER.parseFrom(input);
         }
         public static com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address parseFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          return newBuilder().mergeFrom(input, extensionRegistry)
-                   .buildParsed();
+          return PARSER.parseFrom(input, extensionRegistry);
         }
-        
+
         public static Builder newBuilder() { return Builder.create(); }
         public Builder newBuilderForType() { return newBuilder(); }
         public static Builder newBuilder(com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address prototype) {
           return newBuilder().mergeFrom(prototype);
         }
         public Builder toBuilder() { return newBuilder(this); }
-        
+
         @java.lang.Override
         protected Builder newBuilderForType(
             com.google.protobuf.GeneratedMessage.BuilderParent parent) {
           Builder builder = new Builder(parent);
           return builder;
         }
+        /**
+         * Protobuf type {@code Game.Cars.Car.Vendor.Address}
+         *
+         * <pre>
+         * Car Vendor Address
+         * </pre>
+         */
         public static final class Builder extends
             com.google.protobuf.GeneratedMessage.Builder<Builder>
            implements com.whg.protobuf.ComplexProtoBuf.Car.Vendor.AddressOrBuilder {
@@ -361,18 +723,21 @@ public final class ComplexProtoBuf {
               getDescriptor() {
             return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Vendor_Address_descriptor;
           }
-          
+
           protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
               internalGetFieldAccessorTable() {
-            return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Vendor_Address_fieldAccessorTable;
+            return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Vendor_Address_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.class, com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.Builder.class);
           }
-          
+
           // Construct using com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.newBuilder()
           private Builder() {
             maybeForceBuilderInitialization();
           }
-          
-          private Builder(BuilderParent parent) {
+
+          private Builder(
+              com.google.protobuf.GeneratedMessage.BuilderParent parent) {
             super(parent);
             maybeForceBuilderInitialization();
           }
@@ -383,27 +748,27 @@ public final class ComplexProtoBuf {
           private static Builder create() {
             return new Builder();
           }
-          
+
           public Builder clear() {
             super.clear();
             country_ = "";
             bitField0_ = (bitField0_ & ~0x00000001);
             return this;
           }
-          
+
           public Builder clone() {
             return create().mergeFrom(buildPartial());
           }
-          
+
           public com.google.protobuf.Descriptors.Descriptor
               getDescriptorForType() {
-            return com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.getDescriptor();
+            return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Vendor_Address_descriptor;
           }
-          
+
           public com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address getDefaultInstanceForType() {
             return com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.getDefaultInstance();
           }
-          
+
           public com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address build() {
             com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address result = buildPartial();
             if (!result.isInitialized()) {
@@ -411,17 +776,7 @@ public final class ComplexProtoBuf {
             }
             return result;
           }
-          
-          private com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address buildParsed()
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address result = buildPartial();
-            if (!result.isInitialized()) {
-              throw newUninitializedMessageException(
-                result).asInvalidProtocolBufferException();
-            }
-            return result;
-          }
-          
+
           public com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address buildPartial() {
             com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address result = new com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address(this);
             int from_bitField0_ = bitField0_;
@@ -434,7 +789,7 @@ public final class ComplexProtoBuf {
             onBuilt();
             return result;
           }
-          
+
           public Builder mergeFrom(com.google.protobuf.Message other) {
             if (other instanceof com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address) {
               return mergeFrom((com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address)other);
@@ -443,16 +798,18 @@ public final class ComplexProtoBuf {
               return this;
             }
           }
-          
+
           public Builder mergeFrom(com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address other) {
             if (other == com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.getDefaultInstance()) return this;
             if (other.hasCountry()) {
-              setCountry(other.getCountry());
+              bitField0_ |= 0x00000001;
+              country_ = other.country_;
+              onChanged();
             }
             this.mergeUnknownFields(other.getUnknownFields());
             return this;
           }
-          
+
           public final boolean isInitialized() {
             if (!hasCountry()) {
               
@@ -460,57 +817,69 @@ public final class ComplexProtoBuf {
             }
             return true;
           }
-          
+
           public Builder mergeFrom(
               com.google.protobuf.CodedInputStream input,
               com.google.protobuf.ExtensionRegistryLite extensionRegistry)
               throws java.io.IOException {
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-              com.google.protobuf.UnknownFieldSet.newBuilder(
-                this.getUnknownFields());
-            while (true) {
-              int tag = input.readTag();
-              switch (tag) {
-                case 0:
-                  this.setUnknownFields(unknownFields.build());
-                  onChanged();
-                  return this;
-                default: {
-                  if (!parseUnknownField(input, unknownFields,
-                                         extensionRegistry, tag)) {
-                    this.setUnknownFields(unknownFields.build());
-                    onChanged();
-                    return this;
-                  }
-                  break;
-                }
-                case 10: {
-                  bitField0_ |= 0x00000001;
-                  country_ = input.readBytes();
-                  break;
-                }
+            com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address parsedMessage = null;
+            try {
+              parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              parsedMessage = (com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address) e.getUnfinishedMessage();
+              throw e;
+            } finally {
+              if (parsedMessage != null) {
+                mergeFrom(parsedMessage);
               }
             }
+            return this;
           }
-          
           private int bitField0_;
-          
+
           // required string country = 1;
-          private Object country_ = "";
+          private java.lang.Object country_ = "";
+          /**
+           * <code>required string country = 1;</code>
+           */
           public boolean hasCountry() {
             return ((bitField0_ & 0x00000001) == 0x00000001);
           }
-          public String getCountry() {
-            Object ref = country_;
-            if (!(ref instanceof String)) {
-              String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          /**
+           * <code>required string country = 1;</code>
+           */
+          public java.lang.String getCountry() {
+            java.lang.Object ref = country_;
+            if (!(ref instanceof java.lang.String)) {
+              java.lang.String s = ((com.google.protobuf.ByteString) ref)
+                  .toStringUtf8();
               country_ = s;
               return s;
             } else {
-              return (String) ref;
+              return (java.lang.String) ref;
             }
           }
-          public Builder setCountry(String value) {
+          /**
+           * <code>required string country = 1;</code>
+           */
+          public com.google.protobuf.ByteString
+              getCountryBytes() {
+            java.lang.Object ref = country_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b = 
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                      (java.lang.String) ref);
+              country_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           * <code>required string country = 1;</code>
+           */
+          public Builder setCountry(
+              java.lang.String value) {
             if (value == null) {
     throw new NullPointerException();
   }
@@ -519,75 +888,106 @@ public final class ComplexProtoBuf {
             onChanged();
             return this;
           }
+          /**
+           * <code>required string country = 1;</code>
+           */
           public Builder clearCountry() {
             bitField0_ = (bitField0_ & ~0x00000001);
             country_ = getDefaultInstance().getCountry();
             onChanged();
             return this;
           }
-          void setCountry(com.google.protobuf.ByteString value) {
-            bitField0_ |= 0x00000001;
+          /**
+           * <code>required string country = 1;</code>
+           */
+          public Builder setCountryBytes(
+              com.google.protobuf.ByteString value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
             country_ = value;
             onChanged();
+            return this;
           }
-          
+
           // @@protoc_insertion_point(builder_scope:Game.Cars.Car.Vendor.Address)
         }
-        
+
         static {
           defaultInstance = new Address(true);
           defaultInstance.initFields();
         }
-        
+
         // @@protoc_insertion_point(class_scope:Game.Cars.Car.Vendor.Address)
       }
-      
+
       private int bitField0_;
       // required string name = 1;
       public static final int NAME_FIELD_NUMBER = 1;
-      private Object name_;
+      private java.lang.Object name_;
+      /**
+       * <code>required string name = 1;</code>
+       */
       public boolean hasName() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      public String getName() {
-        Object ref = name_;
-        if (ref instanceof String) {
-          return (String) ref;
+      /**
+       * <code>required string name = 1;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
         } else {
           com.google.protobuf.ByteString bs = 
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
             name_ = s;
           }
           return s;
         }
       }
-      private com.google.protobuf.ByteString getNameBytes() {
-        Object ref = name_;
-        if (ref instanceof String) {
+      /**
+       * <code>required string name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
           com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
           name_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-      
+
       // optional .Game.Cars.Car.Vendor.Address address = 2;
       public static final int ADDRESS_FIELD_NUMBER = 2;
       private com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address address_;
+      /**
+       * <code>optional .Game.Cars.Car.Vendor.Address address = 2;</code>
+       */
       public boolean hasAddress() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+      /**
+       * <code>optional .Game.Cars.Car.Vendor.Address address = 2;</code>
+       */
       public com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address getAddress() {
         return address_;
       }
+      /**
+       * <code>optional .Game.Cars.Car.Vendor.Address address = 2;</code>
+       */
       public com.whg.protobuf.ComplexProtoBuf.Car.Vendor.AddressOrBuilder getAddressOrBuilder() {
         return address_;
       }
-      
+
       private void initFields() {
         name_ = "";
         address_ = com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.getDefaultInstance();
@@ -596,7 +996,7 @@ public final class ComplexProtoBuf {
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized != -1) return isInitialized == 1;
-        
+
         if (!hasName()) {
           memoizedIsInitialized = 0;
           return false;
@@ -610,7 +1010,7 @@ public final class ComplexProtoBuf {
         memoizedIsInitialized = 1;
         return true;
       }
-      
+
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         getSerializedSize();
@@ -622,12 +1022,12 @@ public final class ComplexProtoBuf {
         }
         getUnknownFields().writeTo(output);
       }
-      
+
       private int memoizedSerializedSize = -1;
       public int getSerializedSize() {
         int size = memoizedSerializedSize;
         if (size != -1) return size;
-      
+
         size = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           size += com.google.protobuf.CodedOutputStream
@@ -641,92 +1041,87 @@ public final class ComplexProtoBuf {
         memoizedSerializedSize = size;
         return size;
       }
-      
+
+      private static final long serialVersionUID = 0L;
       @java.lang.Override
-      protected Object writeReplace() throws java.io.ObjectStreamException {
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
         return super.writeReplace();
       }
-      
+
       public static com.whg.protobuf.ComplexProtoBuf.Car.Vendor parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data).buildParsed();
+        return PARSER.parseFrom(data);
       }
       public static com.whg.protobuf.ComplexProtoBuf.Car.Vendor parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data, extensionRegistry)
-                 .buildParsed();
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static com.whg.protobuf.ComplexProtoBuf.Car.Vendor parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data).buildParsed();
+        return PARSER.parseFrom(data);
       }
       public static com.whg.protobuf.ComplexProtoBuf.Car.Vendor parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data, extensionRegistry)
-                 .buildParsed();
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static com.whg.protobuf.ComplexProtoBuf.Car.Vendor parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return newBuilder().mergeFrom(input).buildParsed();
+        return PARSER.parseFrom(input);
       }
       public static com.whg.protobuf.ComplexProtoBuf.Car.Vendor parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return newBuilder().mergeFrom(input, extensionRegistry)
-                 .buildParsed();
+        return PARSER.parseFrom(input, extensionRegistry);
       }
       public static com.whg.protobuf.ComplexProtoBuf.Car.Vendor parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        Builder builder = newBuilder();
-        if (builder.mergeDelimitedFrom(input)) {
-          return builder.buildParsed();
-        } else {
-          return null;
-        }
+        return PARSER.parseDelimitedFrom(input);
       }
       public static com.whg.protobuf.ComplexProtoBuf.Car.Vendor parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        Builder builder = newBuilder();
-        if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-          return builder.buildParsed();
-        } else {
-          return null;
-        }
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
       }
       public static com.whg.protobuf.ComplexProtoBuf.Car.Vendor parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return newBuilder().mergeFrom(input).buildParsed();
+        return PARSER.parseFrom(input);
       }
       public static com.whg.protobuf.ComplexProtoBuf.Car.Vendor parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return newBuilder().mergeFrom(input, extensionRegistry)
-                 .buildParsed();
+        return PARSER.parseFrom(input, extensionRegistry);
       }
-      
+
       public static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder(com.whg.protobuf.ComplexProtoBuf.Car.Vendor prototype) {
         return newBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() { return newBuilder(this); }
-      
+
       @java.lang.Override
       protected Builder newBuilderForType(
           com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
+      /**
+       * Protobuf type {@code Game.Cars.Car.Vendor}
+       *
+       * <pre>
+       * Car Vendor
+       * </pre>
+       */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessage.Builder<Builder>
          implements com.whg.protobuf.ComplexProtoBuf.Car.VendorOrBuilder {
@@ -734,18 +1129,21 @@ public final class ComplexProtoBuf {
             getDescriptor() {
           return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Vendor_descriptor;
         }
-        
+
         protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Vendor_fieldAccessorTable;
+          return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Vendor_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.whg.protobuf.ComplexProtoBuf.Car.Vendor.class, com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Builder.class);
         }
-        
+
         // Construct using com.whg.protobuf.ComplexProtoBuf.Car.Vendor.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
-        
-        private Builder(BuilderParent parent) {
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
@@ -757,7 +1155,7 @@ public final class ComplexProtoBuf {
         private static Builder create() {
           return new Builder();
         }
-        
+
         public Builder clear() {
           super.clear();
           name_ = "";
@@ -770,20 +1168,20 @@ public final class ComplexProtoBuf {
           bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
-        
+
         public Builder clone() {
           return create().mergeFrom(buildPartial());
         }
-        
+
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return com.whg.protobuf.ComplexProtoBuf.Car.Vendor.getDescriptor();
+          return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Vendor_descriptor;
         }
-        
+
         public com.whg.protobuf.ComplexProtoBuf.Car.Vendor getDefaultInstanceForType() {
           return com.whg.protobuf.ComplexProtoBuf.Car.Vendor.getDefaultInstance();
         }
-        
+
         public com.whg.protobuf.ComplexProtoBuf.Car.Vendor build() {
           com.whg.protobuf.ComplexProtoBuf.Car.Vendor result = buildPartial();
           if (!result.isInitialized()) {
@@ -791,17 +1189,7 @@ public final class ComplexProtoBuf {
           }
           return result;
         }
-        
-        private com.whg.protobuf.ComplexProtoBuf.Car.Vendor buildParsed()
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          com.whg.protobuf.ComplexProtoBuf.Car.Vendor result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(
-              result).asInvalidProtocolBufferException();
-          }
-          return result;
-        }
-        
+
         public com.whg.protobuf.ComplexProtoBuf.Car.Vendor buildPartial() {
           com.whg.protobuf.ComplexProtoBuf.Car.Vendor result = new com.whg.protobuf.ComplexProtoBuf.Car.Vendor(this);
           int from_bitField0_ = bitField0_;
@@ -822,7 +1210,7 @@ public final class ComplexProtoBuf {
           onBuilt();
           return result;
         }
-        
+
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.whg.protobuf.ComplexProtoBuf.Car.Vendor) {
             return mergeFrom((com.whg.protobuf.ComplexProtoBuf.Car.Vendor)other);
@@ -831,11 +1219,13 @@ public final class ComplexProtoBuf {
             return this;
           }
         }
-        
+
         public Builder mergeFrom(com.whg.protobuf.ComplexProtoBuf.Car.Vendor other) {
           if (other == com.whg.protobuf.ComplexProtoBuf.Car.Vendor.getDefaultInstance()) return this;
           if (other.hasName()) {
-            setName(other.getName());
+            bitField0_ |= 0x00000001;
+            name_ = other.name_;
+            onChanged();
           }
           if (other.hasAddress()) {
             mergeAddress(other.getAddress());
@@ -843,7 +1233,7 @@ public final class ComplexProtoBuf {
           this.mergeUnknownFields(other.getUnknownFields());
           return this;
         }
-        
+
         public final boolean isInitialized() {
           if (!hasName()) {
             
@@ -857,66 +1247,69 @@ public final class ComplexProtoBuf {
           }
           return true;
         }
-        
+
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder(
-              this.getUnknownFields());
-          while (true) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
-                  this.setUnknownFields(unknownFields.build());
-                  onChanged();
-                  return this;
-                }
-                break;
-              }
-              case 10: {
-                bitField0_ |= 0x00000001;
-                name_ = input.readBytes();
-                break;
-              }
-              case 18: {
-                com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.Builder subBuilder = com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.newBuilder();
-                if (hasAddress()) {
-                  subBuilder.mergeFrom(getAddress());
-                }
-                input.readMessage(subBuilder, extensionRegistry);
-                setAddress(subBuilder.buildPartial());
-                break;
-              }
+          com.whg.protobuf.ComplexProtoBuf.Car.Vendor parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.whg.protobuf.ComplexProtoBuf.Car.Vendor) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
             }
           }
+          return this;
         }
-        
         private int bitField0_;
-        
+
         // required string name = 1;
-        private Object name_ = "";
+        private java.lang.Object name_ = "";
+        /**
+         * <code>required string name = 1;</code>
+         */
         public boolean hasName() {
           return ((bitField0_ & 0x00000001) == 0x00000001);
         }
-        public String getName() {
-          Object ref = name_;
-          if (!(ref instanceof String)) {
-            String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        /**
+         * <code>required string name = 1;</code>
+         */
+        public java.lang.String getName() {
+          java.lang.Object ref = name_;
+          if (!(ref instanceof java.lang.String)) {
+            java.lang.String s = ((com.google.protobuf.ByteString) ref)
+                .toStringUtf8();
             name_ = s;
             return s;
           } else {
-            return (String) ref;
+            return (java.lang.String) ref;
           }
         }
-        public Builder setName(String value) {
+        /**
+         * <code>required string name = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getNameBytes() {
+          java.lang.Object ref = name_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            name_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>required string name = 1;</code>
+         */
+        public Builder setName(
+            java.lang.String value) {
           if (value == null) {
     throw new NullPointerException();
   }
@@ -925,25 +1318,42 @@ public final class ComplexProtoBuf {
           onChanged();
           return this;
         }
+        /**
+         * <code>required string name = 1;</code>
+         */
         public Builder clearName() {
           bitField0_ = (bitField0_ & ~0x00000001);
           name_ = getDefaultInstance().getName();
           onChanged();
           return this;
         }
-        void setName(com.google.protobuf.ByteString value) {
-          bitField0_ |= 0x00000001;
+        /**
+         * <code>required string name = 1;</code>
+         */
+        public Builder setNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
           name_ = value;
           onChanged();
+          return this;
         }
-        
+
         // optional .Game.Cars.Car.Vendor.Address address = 2;
         private com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address address_ = com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.getDefaultInstance();
         private com.google.protobuf.SingleFieldBuilder<
             com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address, com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.Builder, com.whg.protobuf.ComplexProtoBuf.Car.Vendor.AddressOrBuilder> addressBuilder_;
+        /**
+         * <code>optional .Game.Cars.Car.Vendor.Address address = 2;</code>
+         */
         public boolean hasAddress() {
           return ((bitField0_ & 0x00000002) == 0x00000002);
         }
+        /**
+         * <code>optional .Game.Cars.Car.Vendor.Address address = 2;</code>
+         */
         public com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address getAddress() {
           if (addressBuilder_ == null) {
             return address_;
@@ -951,6 +1361,9 @@ public final class ComplexProtoBuf {
             return addressBuilder_.getMessage();
           }
         }
+        /**
+         * <code>optional .Game.Cars.Car.Vendor.Address address = 2;</code>
+         */
         public Builder setAddress(com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address value) {
           if (addressBuilder_ == null) {
             if (value == null) {
@@ -964,6 +1377,9 @@ public final class ComplexProtoBuf {
           bitField0_ |= 0x00000002;
           return this;
         }
+        /**
+         * <code>optional .Game.Cars.Car.Vendor.Address address = 2;</code>
+         */
         public Builder setAddress(
             com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.Builder builderForValue) {
           if (addressBuilder_ == null) {
@@ -975,6 +1391,9 @@ public final class ComplexProtoBuf {
           bitField0_ |= 0x00000002;
           return this;
         }
+        /**
+         * <code>optional .Game.Cars.Car.Vendor.Address address = 2;</code>
+         */
         public Builder mergeAddress(com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address value) {
           if (addressBuilder_ == null) {
             if (((bitField0_ & 0x00000002) == 0x00000002) &&
@@ -991,6 +1410,9 @@ public final class ComplexProtoBuf {
           bitField0_ |= 0x00000002;
           return this;
         }
+        /**
+         * <code>optional .Game.Cars.Car.Vendor.Address address = 2;</code>
+         */
         public Builder clearAddress() {
           if (addressBuilder_ == null) {
             address_ = com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.getDefaultInstance();
@@ -1001,11 +1423,17 @@ public final class ComplexProtoBuf {
           bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
+        /**
+         * <code>optional .Game.Cars.Car.Vendor.Address address = 2;</code>
+         */
         public com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.Builder getAddressBuilder() {
           bitField0_ |= 0x00000002;
           onChanged();
           return getAddressFieldBuilder().getBuilder();
         }
+        /**
+         * <code>optional .Game.Cars.Car.Vendor.Address address = 2;</code>
+         */
         public com.whg.protobuf.ComplexProtoBuf.Car.Vendor.AddressOrBuilder getAddressOrBuilder() {
           if (addressBuilder_ != null) {
             return addressBuilder_.getMessageOrBuilder();
@@ -1013,6 +1441,9 @@ public final class ComplexProtoBuf {
             return address_;
           }
         }
+        /**
+         * <code>optional .Game.Cars.Car.Vendor.Address address = 2;</code>
+         */
         private com.google.protobuf.SingleFieldBuilder<
             com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address, com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.Builder, com.whg.protobuf.ComplexProtoBuf.Car.Vendor.AddressOrBuilder> 
             getAddressFieldBuilder() {
@@ -1026,140 +1457,291 @@ public final class ComplexProtoBuf {
           }
           return addressBuilder_;
         }
-        
+
         // @@protoc_insertion_point(builder_scope:Game.Cars.Car.Vendor)
       }
-      
+
       static {
         defaultInstance = new Vendor(true);
         defaultInstance.initFields();
       }
-      
+
       // @@protoc_insertion_point(class_scope:Game.Cars.Car.Vendor)
     }
-    
+
     public interface HolderOrBuilder
         extends com.google.protobuf.MessageOrBuilder {
-      
+
       // optional string first_name = 1;
+      /**
+       * <code>optional string first_name = 1;</code>
+       */
       boolean hasFirstName();
-      String getFirstName();
-      
+      /**
+       * <code>optional string first_name = 1;</code>
+       */
+      java.lang.String getFirstName();
+      /**
+       * <code>optional string first_name = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getFirstNameBytes();
+
       // required string last_name = 2;
+      /**
+       * <code>required string last_name = 2;</code>
+       */
       boolean hasLastName();
-      String getLastName();
-      
+      /**
+       * <code>required string last_name = 2;</code>
+       */
+      java.lang.String getLastName();
+      /**
+       * <code>required string last_name = 2;</code>
+       */
+      com.google.protobuf.ByteString
+          getLastNameBytes();
+
       // optional .Game.Cars.Car.Vendor.Address address = 3;
+      /**
+       * <code>optional .Game.Cars.Car.Vendor.Address address = 3;</code>
+       */
       boolean hasAddress();
+      /**
+       * <code>optional .Game.Cars.Car.Vendor.Address address = 3;</code>
+       */
       com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address getAddress();
+      /**
+       * <code>optional .Game.Cars.Car.Vendor.Address address = 3;</code>
+       */
       com.whg.protobuf.ComplexProtoBuf.Car.Vendor.AddressOrBuilder getAddressOrBuilder();
     }
+    /**
+     * Protobuf type {@code Game.Cars.Car.Holder}
+     *
+     * <pre>
+     * Car Holder
+     * </pre>
+     */
     public static final class Holder extends
         com.google.protobuf.GeneratedMessage
         implements HolderOrBuilder {
       // Use Holder.newBuilder() to construct.
-      private Holder(Builder builder) {
+      private Holder(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
         super(builder);
+        this.unknownFields = builder.getUnknownFields();
       }
-      private Holder(boolean noInit) {}
-      
+      private Holder(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
       private static final Holder defaultInstance;
       public static Holder getDefaultInstance() {
         return defaultInstance;
       }
-      
+
       public Holder getDefaultInstanceForType() {
         return defaultInstance;
       }
-      
+
+      private final com.google.protobuf.UnknownFieldSet unknownFields;
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+          getUnknownFields() {
+        return this.unknownFields;
+      }
+      private Holder(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        initFields();
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownField(input, unknownFields,
+                                       extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 10: {
+                bitField0_ |= 0x00000001;
+                firstName_ = input.readBytes();
+                break;
+              }
+              case 18: {
+                bitField0_ |= 0x00000002;
+                lastName_ = input.readBytes();
+                break;
+              }
+              case 26: {
+                com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.Builder subBuilder = null;
+                if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                  subBuilder = address_.toBuilder();
+                }
+                address_ = input.readMessage(com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.PARSER, extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(address_);
+                  address_ = subBuilder.buildPartial();
+                }
+                bitField0_ |= 0x00000004;
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e.getMessage()).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Holder_descriptor;
       }
-      
+
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Holder_fieldAccessorTable;
+        return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Holder_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.whg.protobuf.ComplexProtoBuf.Car.Holder.class, com.whg.protobuf.ComplexProtoBuf.Car.Holder.Builder.class);
       }
-      
+
+      public static com.google.protobuf.Parser<Holder> PARSER =
+          new com.google.protobuf.AbstractParser<Holder>() {
+        public Holder parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Holder(input, extensionRegistry);
+        }
+      };
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Holder> getParserForType() {
+        return PARSER;
+      }
+
       private int bitField0_;
       // optional string first_name = 1;
       public static final int FIRST_NAME_FIELD_NUMBER = 1;
-      private Object firstName_;
+      private java.lang.Object firstName_;
+      /**
+       * <code>optional string first_name = 1;</code>
+       */
       public boolean hasFirstName() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      public String getFirstName() {
-        Object ref = firstName_;
-        if (ref instanceof String) {
-          return (String) ref;
+      /**
+       * <code>optional string first_name = 1;</code>
+       */
+      public java.lang.String getFirstName() {
+        java.lang.Object ref = firstName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
         } else {
           com.google.protobuf.ByteString bs = 
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
             firstName_ = s;
           }
           return s;
         }
       }
-      private com.google.protobuf.ByteString getFirstNameBytes() {
-        Object ref = firstName_;
-        if (ref instanceof String) {
+      /**
+       * <code>optional string first_name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFirstNameBytes() {
+        java.lang.Object ref = firstName_;
+        if (ref instanceof java.lang.String) {
           com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
           firstName_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-      
+
       // required string last_name = 2;
       public static final int LAST_NAME_FIELD_NUMBER = 2;
-      private Object lastName_;
+      private java.lang.Object lastName_;
+      /**
+       * <code>required string last_name = 2;</code>
+       */
       public boolean hasLastName() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
-      public String getLastName() {
-        Object ref = lastName_;
-        if (ref instanceof String) {
-          return (String) ref;
+      /**
+       * <code>required string last_name = 2;</code>
+       */
+      public java.lang.String getLastName() {
+        java.lang.Object ref = lastName_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
         } else {
           com.google.protobuf.ByteString bs = 
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
             lastName_ = s;
           }
           return s;
         }
       }
-      private com.google.protobuf.ByteString getLastNameBytes() {
-        Object ref = lastName_;
-        if (ref instanceof String) {
+      /**
+       * <code>required string last_name = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLastNameBytes() {
+        java.lang.Object ref = lastName_;
+        if (ref instanceof java.lang.String) {
           com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
           lastName_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-      
+
       // optional .Game.Cars.Car.Vendor.Address address = 3;
       public static final int ADDRESS_FIELD_NUMBER = 3;
       private com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address address_;
+      /**
+       * <code>optional .Game.Cars.Car.Vendor.Address address = 3;</code>
+       */
       public boolean hasAddress() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
+      /**
+       * <code>optional .Game.Cars.Car.Vendor.Address address = 3;</code>
+       */
       public com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address getAddress() {
         return address_;
       }
+      /**
+       * <code>optional .Game.Cars.Car.Vendor.Address address = 3;</code>
+       */
       public com.whg.protobuf.ComplexProtoBuf.Car.Vendor.AddressOrBuilder getAddressOrBuilder() {
         return address_;
       }
-      
+
       private void initFields() {
         firstName_ = "";
         lastName_ = "";
@@ -1169,7 +1751,7 @@ public final class ComplexProtoBuf {
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized != -1) return isInitialized == 1;
-        
+
         if (!hasLastName()) {
           memoizedIsInitialized = 0;
           return false;
@@ -1183,7 +1765,7 @@ public final class ComplexProtoBuf {
         memoizedIsInitialized = 1;
         return true;
       }
-      
+
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
         getSerializedSize();
@@ -1198,12 +1780,12 @@ public final class ComplexProtoBuf {
         }
         getUnknownFields().writeTo(output);
       }
-      
+
       private int memoizedSerializedSize = -1;
       public int getSerializedSize() {
         int size = memoizedSerializedSize;
         if (size != -1) return size;
-      
+
         size = 0;
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           size += com.google.protobuf.CodedOutputStream
@@ -1221,92 +1803,87 @@ public final class ComplexProtoBuf {
         memoizedSerializedSize = size;
         return size;
       }
-      
+
+      private static final long serialVersionUID = 0L;
       @java.lang.Override
-      protected Object writeReplace() throws java.io.ObjectStreamException {
+      protected java.lang.Object writeReplace()
+          throws java.io.ObjectStreamException {
         return super.writeReplace();
       }
-      
+
       public static com.whg.protobuf.ComplexProtoBuf.Car.Holder parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data).buildParsed();
+        return PARSER.parseFrom(data);
       }
       public static com.whg.protobuf.ComplexProtoBuf.Car.Holder parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data, extensionRegistry)
-                 .buildParsed();
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static com.whg.protobuf.ComplexProtoBuf.Car.Holder parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data).buildParsed();
+        return PARSER.parseFrom(data);
       }
       public static com.whg.protobuf.ComplexProtoBuf.Car.Holder parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return newBuilder().mergeFrom(data, extensionRegistry)
-                 .buildParsed();
+        return PARSER.parseFrom(data, extensionRegistry);
       }
       public static com.whg.protobuf.ComplexProtoBuf.Car.Holder parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return newBuilder().mergeFrom(input).buildParsed();
+        return PARSER.parseFrom(input);
       }
       public static com.whg.protobuf.ComplexProtoBuf.Car.Holder parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return newBuilder().mergeFrom(input, extensionRegistry)
-                 .buildParsed();
+        return PARSER.parseFrom(input, extensionRegistry);
       }
       public static com.whg.protobuf.ComplexProtoBuf.Car.Holder parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        Builder builder = newBuilder();
-        if (builder.mergeDelimitedFrom(input)) {
-          return builder.buildParsed();
-        } else {
-          return null;
-        }
+        return PARSER.parseDelimitedFrom(input);
       }
       public static com.whg.protobuf.ComplexProtoBuf.Car.Holder parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        Builder builder = newBuilder();
-        if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-          return builder.buildParsed();
-        } else {
-          return null;
-        }
+        return PARSER.parseDelimitedFrom(input, extensionRegistry);
       }
       public static com.whg.protobuf.ComplexProtoBuf.Car.Holder parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return newBuilder().mergeFrom(input).buildParsed();
+        return PARSER.parseFrom(input);
       }
       public static com.whg.protobuf.ComplexProtoBuf.Car.Holder parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return newBuilder().mergeFrom(input, extensionRegistry)
-                 .buildParsed();
+        return PARSER.parseFrom(input, extensionRegistry);
       }
-      
+
       public static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
       public static Builder newBuilder(com.whg.protobuf.ComplexProtoBuf.Car.Holder prototype) {
         return newBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() { return newBuilder(this); }
-      
+
       @java.lang.Override
       protected Builder newBuilderForType(
           com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
+      /**
+       * Protobuf type {@code Game.Cars.Car.Holder}
+       *
+       * <pre>
+       * Car Holder
+       * </pre>
+       */
       public static final class Builder extends
           com.google.protobuf.GeneratedMessage.Builder<Builder>
          implements com.whg.protobuf.ComplexProtoBuf.Car.HolderOrBuilder {
@@ -1314,18 +1891,21 @@ public final class ComplexProtoBuf {
             getDescriptor() {
           return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Holder_descriptor;
         }
-        
+
         protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Holder_fieldAccessorTable;
+          return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Holder_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.whg.protobuf.ComplexProtoBuf.Car.Holder.class, com.whg.protobuf.ComplexProtoBuf.Car.Holder.Builder.class);
         }
-        
+
         // Construct using com.whg.protobuf.ComplexProtoBuf.Car.Holder.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
-        
-        private Builder(BuilderParent parent) {
+
+        private Builder(
+            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
@@ -1337,7 +1917,7 @@ public final class ComplexProtoBuf {
         private static Builder create() {
           return new Builder();
         }
-        
+
         public Builder clear() {
           super.clear();
           firstName_ = "";
@@ -1352,20 +1932,20 @@ public final class ComplexProtoBuf {
           bitField0_ = (bitField0_ & ~0x00000004);
           return this;
         }
-        
+
         public Builder clone() {
           return create().mergeFrom(buildPartial());
         }
-        
+
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return com.whg.protobuf.ComplexProtoBuf.Car.Holder.getDescriptor();
+          return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_Holder_descriptor;
         }
-        
+
         public com.whg.protobuf.ComplexProtoBuf.Car.Holder getDefaultInstanceForType() {
           return com.whg.protobuf.ComplexProtoBuf.Car.Holder.getDefaultInstance();
         }
-        
+
         public com.whg.protobuf.ComplexProtoBuf.Car.Holder build() {
           com.whg.protobuf.ComplexProtoBuf.Car.Holder result = buildPartial();
           if (!result.isInitialized()) {
@@ -1373,17 +1953,7 @@ public final class ComplexProtoBuf {
           }
           return result;
         }
-        
-        private com.whg.protobuf.ComplexProtoBuf.Car.Holder buildParsed()
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          com.whg.protobuf.ComplexProtoBuf.Car.Holder result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(
-              result).asInvalidProtocolBufferException();
-          }
-          return result;
-        }
-        
+
         public com.whg.protobuf.ComplexProtoBuf.Car.Holder buildPartial() {
           com.whg.protobuf.ComplexProtoBuf.Car.Holder result = new com.whg.protobuf.ComplexProtoBuf.Car.Holder(this);
           int from_bitField0_ = bitField0_;
@@ -1408,7 +1978,7 @@ public final class ComplexProtoBuf {
           onBuilt();
           return result;
         }
-        
+
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof com.whg.protobuf.ComplexProtoBuf.Car.Holder) {
             return mergeFrom((com.whg.protobuf.ComplexProtoBuf.Car.Holder)other);
@@ -1417,14 +1987,18 @@ public final class ComplexProtoBuf {
             return this;
           }
         }
-        
+
         public Builder mergeFrom(com.whg.protobuf.ComplexProtoBuf.Car.Holder other) {
           if (other == com.whg.protobuf.ComplexProtoBuf.Car.Holder.getDefaultInstance()) return this;
           if (other.hasFirstName()) {
-            setFirstName(other.getFirstName());
+            bitField0_ |= 0x00000001;
+            firstName_ = other.firstName_;
+            onChanged();
           }
           if (other.hasLastName()) {
-            setLastName(other.getLastName());
+            bitField0_ |= 0x00000002;
+            lastName_ = other.lastName_;
+            onChanged();
           }
           if (other.hasAddress()) {
             mergeAddress(other.getAddress());
@@ -1432,7 +2006,7 @@ public final class ComplexProtoBuf {
           this.mergeUnknownFields(other.getUnknownFields());
           return this;
         }
-        
+
         public final boolean isInitialized() {
           if (!hasLastName()) {
             
@@ -1446,71 +2020,69 @@ public final class ComplexProtoBuf {
           }
           return true;
         }
-        
+
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder(
-              this.getUnknownFields());
-          while (true) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
-                  this.setUnknownFields(unknownFields.build());
-                  onChanged();
-                  return this;
-                }
-                break;
-              }
-              case 10: {
-                bitField0_ |= 0x00000001;
-                firstName_ = input.readBytes();
-                break;
-              }
-              case 18: {
-                bitField0_ |= 0x00000002;
-                lastName_ = input.readBytes();
-                break;
-              }
-              case 26: {
-                com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.Builder subBuilder = com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.newBuilder();
-                if (hasAddress()) {
-                  subBuilder.mergeFrom(getAddress());
-                }
-                input.readMessage(subBuilder, extensionRegistry);
-                setAddress(subBuilder.buildPartial());
-                break;
-              }
+          com.whg.protobuf.ComplexProtoBuf.Car.Holder parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.whg.protobuf.ComplexProtoBuf.Car.Holder) e.getUnfinishedMessage();
+            throw e;
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
             }
           }
+          return this;
         }
-        
         private int bitField0_;
-        
+
         // optional string first_name = 1;
-        private Object firstName_ = "";
+        private java.lang.Object firstName_ = "";
+        /**
+         * <code>optional string first_name = 1;</code>
+         */
         public boolean hasFirstName() {
           return ((bitField0_ & 0x00000001) == 0x00000001);
         }
-        public String getFirstName() {
-          Object ref = firstName_;
-          if (!(ref instanceof String)) {
-            String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        /**
+         * <code>optional string first_name = 1;</code>
+         */
+        public java.lang.String getFirstName() {
+          java.lang.Object ref = firstName_;
+          if (!(ref instanceof java.lang.String)) {
+            java.lang.String s = ((com.google.protobuf.ByteString) ref)
+                .toStringUtf8();
             firstName_ = s;
             return s;
           } else {
-            return (String) ref;
+            return (java.lang.String) ref;
           }
         }
-        public Builder setFirstName(String value) {
+        /**
+         * <code>optional string first_name = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getFirstNameBytes() {
+          java.lang.Object ref = firstName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            firstName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>optional string first_name = 1;</code>
+         */
+        public Builder setFirstName(
+            java.lang.String value) {
           if (value == null) {
     throw new NullPointerException();
   }
@@ -1519,34 +2091,72 @@ public final class ComplexProtoBuf {
           onChanged();
           return this;
         }
+        /**
+         * <code>optional string first_name = 1;</code>
+         */
         public Builder clearFirstName() {
           bitField0_ = (bitField0_ & ~0x00000001);
           firstName_ = getDefaultInstance().getFirstName();
           onChanged();
           return this;
         }
-        void setFirstName(com.google.protobuf.ByteString value) {
-          bitField0_ |= 0x00000001;
+        /**
+         * <code>optional string first_name = 1;</code>
+         */
+        public Builder setFirstNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
           firstName_ = value;
           onChanged();
+          return this;
         }
-        
+
         // required string last_name = 2;
-        private Object lastName_ = "";
+        private java.lang.Object lastName_ = "";
+        /**
+         * <code>required string last_name = 2;</code>
+         */
         public boolean hasLastName() {
           return ((bitField0_ & 0x00000002) == 0x00000002);
         }
-        public String getLastName() {
-          Object ref = lastName_;
-          if (!(ref instanceof String)) {
-            String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+        /**
+         * <code>required string last_name = 2;</code>
+         */
+        public java.lang.String getLastName() {
+          java.lang.Object ref = lastName_;
+          if (!(ref instanceof java.lang.String)) {
+            java.lang.String s = ((com.google.protobuf.ByteString) ref)
+                .toStringUtf8();
             lastName_ = s;
             return s;
           } else {
-            return (String) ref;
+            return (java.lang.String) ref;
           }
         }
-        public Builder setLastName(String value) {
+        /**
+         * <code>required string last_name = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+            getLastNameBytes() {
+          java.lang.Object ref = lastName_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            lastName_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>required string last_name = 2;</code>
+         */
+        public Builder setLastName(
+            java.lang.String value) {
           if (value == null) {
     throw new NullPointerException();
   }
@@ -1555,25 +2165,42 @@ public final class ComplexProtoBuf {
           onChanged();
           return this;
         }
+        /**
+         * <code>required string last_name = 2;</code>
+         */
         public Builder clearLastName() {
           bitField0_ = (bitField0_ & ~0x00000002);
           lastName_ = getDefaultInstance().getLastName();
           onChanged();
           return this;
         }
-        void setLastName(com.google.protobuf.ByteString value) {
-          bitField0_ |= 0x00000002;
+        /**
+         * <code>required string last_name = 2;</code>
+         */
+        public Builder setLastNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
           lastName_ = value;
           onChanged();
+          return this;
         }
-        
+
         // optional .Game.Cars.Car.Vendor.Address address = 3;
         private com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address address_ = com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.getDefaultInstance();
         private com.google.protobuf.SingleFieldBuilder<
             com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address, com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.Builder, com.whg.protobuf.ComplexProtoBuf.Car.Vendor.AddressOrBuilder> addressBuilder_;
+        /**
+         * <code>optional .Game.Cars.Car.Vendor.Address address = 3;</code>
+         */
         public boolean hasAddress() {
           return ((bitField0_ & 0x00000004) == 0x00000004);
         }
+        /**
+         * <code>optional .Game.Cars.Car.Vendor.Address address = 3;</code>
+         */
         public com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address getAddress() {
           if (addressBuilder_ == null) {
             return address_;
@@ -1581,6 +2208,9 @@ public final class ComplexProtoBuf {
             return addressBuilder_.getMessage();
           }
         }
+        /**
+         * <code>optional .Game.Cars.Car.Vendor.Address address = 3;</code>
+         */
         public Builder setAddress(com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address value) {
           if (addressBuilder_ == null) {
             if (value == null) {
@@ -1594,6 +2224,9 @@ public final class ComplexProtoBuf {
           bitField0_ |= 0x00000004;
           return this;
         }
+        /**
+         * <code>optional .Game.Cars.Car.Vendor.Address address = 3;</code>
+         */
         public Builder setAddress(
             com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.Builder builderForValue) {
           if (addressBuilder_ == null) {
@@ -1605,6 +2238,9 @@ public final class ComplexProtoBuf {
           bitField0_ |= 0x00000004;
           return this;
         }
+        /**
+         * <code>optional .Game.Cars.Car.Vendor.Address address = 3;</code>
+         */
         public Builder mergeAddress(com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address value) {
           if (addressBuilder_ == null) {
             if (((bitField0_ & 0x00000004) == 0x00000004) &&
@@ -1621,6 +2257,9 @@ public final class ComplexProtoBuf {
           bitField0_ |= 0x00000004;
           return this;
         }
+        /**
+         * <code>optional .Game.Cars.Car.Vendor.Address address = 3;</code>
+         */
         public Builder clearAddress() {
           if (addressBuilder_ == null) {
             address_ = com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.getDefaultInstance();
@@ -1631,11 +2270,17 @@ public final class ComplexProtoBuf {
           bitField0_ = (bitField0_ & ~0x00000004);
           return this;
         }
+        /**
+         * <code>optional .Game.Cars.Car.Vendor.Address address = 3;</code>
+         */
         public com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.Builder getAddressBuilder() {
           bitField0_ |= 0x00000004;
           onChanged();
           return getAddressFieldBuilder().getBuilder();
         }
+        /**
+         * <code>optional .Game.Cars.Car.Vendor.Address address = 3;</code>
+         */
         public com.whg.protobuf.ComplexProtoBuf.Car.Vendor.AddressOrBuilder getAddressOrBuilder() {
           if (addressBuilder_ != null) {
             return addressBuilder_.getMessageOrBuilder();
@@ -1643,6 +2288,9 @@ public final class ComplexProtoBuf {
             return address_;
           }
         }
+        /**
+         * <code>optional .Game.Cars.Car.Vendor.Address address = 3;</code>
+         */
         private com.google.protobuf.SingleFieldBuilder<
             com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address, com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.Builder, com.whg.protobuf.ComplexProtoBuf.Car.Vendor.AddressOrBuilder> 
             getAddressFieldBuilder() {
@@ -1656,74 +2304,132 @@ public final class ComplexProtoBuf {
           }
           return addressBuilder_;
         }
-        
+
         // @@protoc_insertion_point(builder_scope:Game.Cars.Car.Holder)
       }
-      
+
       static {
         defaultInstance = new Holder(true);
         defaultInstance.initFields();
       }
-      
+
       // @@protoc_insertion_point(class_scope:Game.Cars.Car.Holder)
     }
-    
+
     private int bitField0_;
     // required string model = 1;
     public static final int MODEL_FIELD_NUMBER = 1;
-    private Object model_;
+    private java.lang.Object model_;
+    /**
+     * <code>required string model = 1;</code>
+     *
+     * <pre>
+     * Model name
+     * </pre>
+     */
     public boolean hasModel() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
-    public String getModel() {
-      Object ref = model_;
-      if (ref instanceof String) {
-        return (String) ref;
+    /**
+     * <code>required string model = 1;</code>
+     *
+     * <pre>
+     * Model name
+     * </pre>
+     */
+    public java.lang.String getModel() {
+      java.lang.Object ref = model_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
           model_ = s;
         }
         return s;
       }
     }
-    private com.google.protobuf.ByteString getModelBytes() {
-      Object ref = model_;
-      if (ref instanceof String) {
+    /**
+     * <code>required string model = 1;</code>
+     *
+     * <pre>
+     * Model name
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getModelBytes() {
+      java.lang.Object ref = model_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         model_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
-    
+
     // required .Game.Cars.Car.Vendor vendor = 2;
     public static final int VENDOR_FIELD_NUMBER = 2;
     private com.whg.protobuf.ComplexProtoBuf.Car.Vendor vendor_;
+    /**
+     * <code>required .Game.Cars.Car.Vendor vendor = 2;</code>
+     *
+     * <pre>
+     * Vendor information
+     * </pre>
+     */
     public boolean hasVendor() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
+    /**
+     * <code>required .Game.Cars.Car.Vendor vendor = 2;</code>
+     *
+     * <pre>
+     * Vendor information
+     * </pre>
+     */
     public com.whg.protobuf.ComplexProtoBuf.Car.Vendor getVendor() {
       return vendor_;
     }
+    /**
+     * <code>required .Game.Cars.Car.Vendor vendor = 2;</code>
+     *
+     * <pre>
+     * Vendor information
+     * </pre>
+     */
     public com.whg.protobuf.ComplexProtoBuf.Car.VendorOrBuilder getVendorOrBuilder() {
       return vendor_;
     }
-    
+
     // optional .Game.Cars.Car.Speed speed = 3 [default = FAST];
     public static final int SPEED_FIELD_NUMBER = 3;
     private com.whg.protobuf.ComplexProtoBuf.Car.Speed speed_;
+    /**
+     * <code>optional .Game.Cars.Car.Speed speed = 3 [default = FAST];</code>
+     *
+     * <pre>
+     * Car speed
+     * </pre>
+     */
     public boolean hasSpeed() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
+    /**
+     * <code>optional .Game.Cars.Car.Speed speed = 3 [default = FAST];</code>
+     *
+     * <pre>
+     * Car speed
+     * </pre>
+     */
     public com.whg.protobuf.ComplexProtoBuf.Car.Speed getSpeed() {
       return speed_;
     }
-    
+
     private void initFields() {
       model_ = "";
       vendor_ = com.whg.protobuf.ComplexProtoBuf.Car.Vendor.getDefaultInstance();
@@ -1733,7 +2439,7 @@ public final class ComplexProtoBuf {
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized != -1) return isInitialized == 1;
-      
+
       if (!hasModel()) {
         memoizedIsInitialized = 0;
         return false;
@@ -1749,7 +2455,7 @@ public final class ComplexProtoBuf {
       memoizedIsInitialized = 1;
       return true;
     }
-    
+
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
@@ -1764,12 +2470,12 @@ public final class ComplexProtoBuf {
       }
       getUnknownFields().writeTo(output);
     }
-    
+
     private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
       int size = memoizedSerializedSize;
       if (size != -1) return size;
-    
+
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
@@ -1787,92 +2493,87 @@ public final class ComplexProtoBuf {
       memoizedSerializedSize = size;
       return size;
     }
-    
+
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected Object writeReplace() throws java.io.ObjectStreamException {
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
       return super.writeReplace();
     }
-    
+
     public static com.whg.protobuf.ComplexProtoBuf.Car parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.whg.protobuf.ComplexProtoBuf.Car parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.whg.protobuf.ComplexProtoBuf.Car parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data).buildParsed();
+      return PARSER.parseFrom(data);
     }
     public static com.whg.protobuf.ComplexProtoBuf.Car parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return newBuilder().mergeFrom(data, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(data, extensionRegistry);
     }
     public static com.whg.protobuf.ComplexProtoBuf.Car parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.whg.protobuf.ComplexProtoBuf.Car parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
     public static com.whg.protobuf.ComplexProtoBuf.Car parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input);
     }
     public static com.whg.protobuf.ComplexProtoBuf.Car parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      Builder builder = newBuilder();
-      if (builder.mergeDelimitedFrom(input, extensionRegistry)) {
-        return builder.buildParsed();
-      } else {
-        return null;
-      }
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
     public static com.whg.protobuf.ComplexProtoBuf.Car parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input).buildParsed();
+      return PARSER.parseFrom(input);
     }
     public static com.whg.protobuf.ComplexProtoBuf.Car parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return newBuilder().mergeFrom(input, extensionRegistry)
-               .buildParsed();
+      return PARSER.parseFrom(input, extensionRegistry);
     }
-    
+
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder(com.whg.protobuf.ComplexProtoBuf.Car prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
-    
+
     @java.lang.Override
     protected Builder newBuilderForType(
         com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
+    /**
+     * Protobuf type {@code Game.Cars.Car}
+     *
+     * <pre>
+     * Car
+     * </pre>
+     */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements com.whg.protobuf.ComplexProtoBuf.CarOrBuilder {
@@ -1880,18 +2581,21 @@ public final class ComplexProtoBuf {
           getDescriptor() {
         return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_descriptor;
       }
-      
+
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_fieldAccessorTable;
+        return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.whg.protobuf.ComplexProtoBuf.Car.class, com.whg.protobuf.ComplexProtoBuf.Car.Builder.class);
       }
-      
+
       // Construct using com.whg.protobuf.ComplexProtoBuf.Car.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
-      
-      private Builder(BuilderParent parent) {
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1903,7 +2607,7 @@ public final class ComplexProtoBuf {
       private static Builder create() {
         return new Builder();
       }
-      
+
       public Builder clear() {
         super.clear();
         model_ = "";
@@ -1918,20 +2622,20 @@ public final class ComplexProtoBuf {
         bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
-      
+
       public Builder clone() {
         return create().mergeFrom(buildPartial());
       }
-      
+
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.whg.protobuf.ComplexProtoBuf.Car.getDescriptor();
+        return com.whg.protobuf.ComplexProtoBuf.internal_static_Game_Cars_Car_descriptor;
       }
-      
+
       public com.whg.protobuf.ComplexProtoBuf.Car getDefaultInstanceForType() {
         return com.whg.protobuf.ComplexProtoBuf.Car.getDefaultInstance();
       }
-      
+
       public com.whg.protobuf.ComplexProtoBuf.Car build() {
         com.whg.protobuf.ComplexProtoBuf.Car result = buildPartial();
         if (!result.isInitialized()) {
@@ -1939,17 +2643,7 @@ public final class ComplexProtoBuf {
         }
         return result;
       }
-      
-      private com.whg.protobuf.ComplexProtoBuf.Car buildParsed()
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        com.whg.protobuf.ComplexProtoBuf.Car result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(
-            result).asInvalidProtocolBufferException();
-        }
-        return result;
-      }
-      
+
       public com.whg.protobuf.ComplexProtoBuf.Car buildPartial() {
         com.whg.protobuf.ComplexProtoBuf.Car result = new com.whg.protobuf.ComplexProtoBuf.Car(this);
         int from_bitField0_ = bitField0_;
@@ -1974,7 +2668,7 @@ public final class ComplexProtoBuf {
         onBuilt();
         return result;
       }
-      
+
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.whg.protobuf.ComplexProtoBuf.Car) {
           return mergeFrom((com.whg.protobuf.ComplexProtoBuf.Car)other);
@@ -1983,11 +2677,13 @@ public final class ComplexProtoBuf {
           return this;
         }
       }
-      
+
       public Builder mergeFrom(com.whg.protobuf.ComplexProtoBuf.Car other) {
         if (other == com.whg.protobuf.ComplexProtoBuf.Car.getDefaultInstance()) return this;
         if (other.hasModel()) {
-          setModel(other.getModel());
+          bitField0_ |= 0x00000001;
+          model_ = other.model_;
+          onChanged();
         }
         if (other.hasVendor()) {
           mergeVendor(other.getVendor());
@@ -1998,7 +2694,7 @@ public final class ComplexProtoBuf {
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
-      
+
       public final boolean isInitialized() {
         if (!hasModel()) {
           
@@ -2014,77 +2710,85 @@ public final class ComplexProtoBuf {
         }
         return true;
       }
-      
+
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder(
-            this.getUnknownFields());
-        while (true) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              this.setUnknownFields(unknownFields.build());
-              onChanged();
-              return this;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                this.setUnknownFields(unknownFields.build());
-                onChanged();
-                return this;
-              }
-              break;
-            }
-            case 10: {
-              bitField0_ |= 0x00000001;
-              model_ = input.readBytes();
-              break;
-            }
-            case 18: {
-              com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Builder subBuilder = com.whg.protobuf.ComplexProtoBuf.Car.Vendor.newBuilder();
-              if (hasVendor()) {
-                subBuilder.mergeFrom(getVendor());
-              }
-              input.readMessage(subBuilder, extensionRegistry);
-              setVendor(subBuilder.buildPartial());
-              break;
-            }
-            case 24: {
-              int rawValue = input.readEnum();
-              com.whg.protobuf.ComplexProtoBuf.Car.Speed value = com.whg.protobuf.ComplexProtoBuf.Car.Speed.valueOf(rawValue);
-              if (value == null) {
-                unknownFields.mergeVarintField(3, rawValue);
-              } else {
-                bitField0_ |= 0x00000004;
-                speed_ = value;
-              }
-              break;
-            }
+        com.whg.protobuf.ComplexProtoBuf.Car parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.whg.protobuf.ComplexProtoBuf.Car) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
           }
         }
+        return this;
       }
-      
       private int bitField0_;
-      
+
       // required string model = 1;
-      private Object model_ = "";
+      private java.lang.Object model_ = "";
+      /**
+       * <code>required string model = 1;</code>
+       *
+       * <pre>
+       * Model name
+       * </pre>
+       */
       public boolean hasModel() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
-      public String getModel() {
-        Object ref = model_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+      /**
+       * <code>required string model = 1;</code>
+       *
+       * <pre>
+       * Model name
+       * </pre>
+       */
+      public java.lang.String getModel() {
+        java.lang.Object ref = model_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
           model_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
-      public Builder setModel(String value) {
+      /**
+       * <code>required string model = 1;</code>
+       *
+       * <pre>
+       * Model name
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getModelBytes() {
+        java.lang.Object ref = model_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          model_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string model = 1;</code>
+       *
+       * <pre>
+       * Model name
+       * </pre>
+       */
+      public Builder setModel(
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2093,25 +2797,58 @@ public final class ComplexProtoBuf {
         onChanged();
         return this;
       }
+      /**
+       * <code>required string model = 1;</code>
+       *
+       * <pre>
+       * Model name
+       * </pre>
+       */
       public Builder clearModel() {
         bitField0_ = (bitField0_ & ~0x00000001);
         model_ = getDefaultInstance().getModel();
         onChanged();
         return this;
       }
-      void setModel(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000001;
+      /**
+       * <code>required string model = 1;</code>
+       *
+       * <pre>
+       * Model name
+       * </pre>
+       */
+      public Builder setModelBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
         model_ = value;
         onChanged();
+        return this;
       }
-      
+
       // required .Game.Cars.Car.Vendor vendor = 2;
       private com.whg.protobuf.ComplexProtoBuf.Car.Vendor vendor_ = com.whg.protobuf.ComplexProtoBuf.Car.Vendor.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           com.whg.protobuf.ComplexProtoBuf.Car.Vendor, com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Builder, com.whg.protobuf.ComplexProtoBuf.Car.VendorOrBuilder> vendorBuilder_;
+      /**
+       * <code>required .Game.Cars.Car.Vendor vendor = 2;</code>
+       *
+       * <pre>
+       * Vendor information
+       * </pre>
+       */
       public boolean hasVendor() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
+      /**
+       * <code>required .Game.Cars.Car.Vendor vendor = 2;</code>
+       *
+       * <pre>
+       * Vendor information
+       * </pre>
+       */
       public com.whg.protobuf.ComplexProtoBuf.Car.Vendor getVendor() {
         if (vendorBuilder_ == null) {
           return vendor_;
@@ -2119,6 +2856,13 @@ public final class ComplexProtoBuf {
           return vendorBuilder_.getMessage();
         }
       }
+      /**
+       * <code>required .Game.Cars.Car.Vendor vendor = 2;</code>
+       *
+       * <pre>
+       * Vendor information
+       * </pre>
+       */
       public Builder setVendor(com.whg.protobuf.ComplexProtoBuf.Car.Vendor value) {
         if (vendorBuilder_ == null) {
           if (value == null) {
@@ -2132,6 +2876,13 @@ public final class ComplexProtoBuf {
         bitField0_ |= 0x00000002;
         return this;
       }
+      /**
+       * <code>required .Game.Cars.Car.Vendor vendor = 2;</code>
+       *
+       * <pre>
+       * Vendor information
+       * </pre>
+       */
       public Builder setVendor(
           com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Builder builderForValue) {
         if (vendorBuilder_ == null) {
@@ -2143,6 +2894,13 @@ public final class ComplexProtoBuf {
         bitField0_ |= 0x00000002;
         return this;
       }
+      /**
+       * <code>required .Game.Cars.Car.Vendor vendor = 2;</code>
+       *
+       * <pre>
+       * Vendor information
+       * </pre>
+       */
       public Builder mergeVendor(com.whg.protobuf.ComplexProtoBuf.Car.Vendor value) {
         if (vendorBuilder_ == null) {
           if (((bitField0_ & 0x00000002) == 0x00000002) &&
@@ -2159,6 +2917,13 @@ public final class ComplexProtoBuf {
         bitField0_ |= 0x00000002;
         return this;
       }
+      /**
+       * <code>required .Game.Cars.Car.Vendor vendor = 2;</code>
+       *
+       * <pre>
+       * Vendor information
+       * </pre>
+       */
       public Builder clearVendor() {
         if (vendorBuilder_ == null) {
           vendor_ = com.whg.protobuf.ComplexProtoBuf.Car.Vendor.getDefaultInstance();
@@ -2169,11 +2934,25 @@ public final class ComplexProtoBuf {
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
+      /**
+       * <code>required .Game.Cars.Car.Vendor vendor = 2;</code>
+       *
+       * <pre>
+       * Vendor information
+       * </pre>
+       */
       public com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Builder getVendorBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
         return getVendorFieldBuilder().getBuilder();
       }
+      /**
+       * <code>required .Game.Cars.Car.Vendor vendor = 2;</code>
+       *
+       * <pre>
+       * Vendor information
+       * </pre>
+       */
       public com.whg.protobuf.ComplexProtoBuf.Car.VendorOrBuilder getVendorOrBuilder() {
         if (vendorBuilder_ != null) {
           return vendorBuilder_.getMessageOrBuilder();
@@ -2181,6 +2960,13 @@ public final class ComplexProtoBuf {
           return vendor_;
         }
       }
+      /**
+       * <code>required .Game.Cars.Car.Vendor vendor = 2;</code>
+       *
+       * <pre>
+       * Vendor information
+       * </pre>
+       */
       private com.google.protobuf.SingleFieldBuilder<
           com.whg.protobuf.ComplexProtoBuf.Car.Vendor, com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Builder, com.whg.protobuf.ComplexProtoBuf.Car.VendorOrBuilder> 
           getVendorFieldBuilder() {
@@ -2194,15 +2980,36 @@ public final class ComplexProtoBuf {
         }
         return vendorBuilder_;
       }
-      
+
       // optional .Game.Cars.Car.Speed speed = 3 [default = FAST];
       private com.whg.protobuf.ComplexProtoBuf.Car.Speed speed_ = com.whg.protobuf.ComplexProtoBuf.Car.Speed.FAST;
+      /**
+       * <code>optional .Game.Cars.Car.Speed speed = 3 [default = FAST];</code>
+       *
+       * <pre>
+       * Car speed
+       * </pre>
+       */
       public boolean hasSpeed() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
+      /**
+       * <code>optional .Game.Cars.Car.Speed speed = 3 [default = FAST];</code>
+       *
+       * <pre>
+       * Car speed
+       * </pre>
+       */
       public com.whg.protobuf.ComplexProtoBuf.Car.Speed getSpeed() {
         return speed_;
       }
+      /**
+       * <code>optional .Game.Cars.Car.Speed speed = 3 [default = FAST];</code>
+       *
+       * <pre>
+       * Car speed
+       * </pre>
+       */
       public Builder setSpeed(com.whg.protobuf.ComplexProtoBuf.Car.Speed value) {
         if (value == null) {
           throw new NullPointerException();
@@ -2212,24 +3019,31 @@ public final class ComplexProtoBuf {
         onChanged();
         return this;
       }
+      /**
+       * <code>optional .Game.Cars.Car.Speed speed = 3 [default = FAST];</code>
+       *
+       * <pre>
+       * Car speed
+       * </pre>
+       */
       public Builder clearSpeed() {
         bitField0_ = (bitField0_ & ~0x00000004);
         speed_ = com.whg.protobuf.ComplexProtoBuf.Car.Speed.FAST;
         onChanged();
         return this;
       }
-      
+
       // @@protoc_insertion_point(builder_scope:Game.Cars.Car)
     }
-    
+
     static {
       defaultInstance = new Car(true);
       defaultInstance.initFields();
     }
-    
+
     // @@protoc_insertion_point(class_scope:Game.Cars.Car)
   }
-  
+
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_Game_Cars_Car_descriptor;
   private static
@@ -2250,7 +3064,7 @@ public final class ComplexProtoBuf {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_Game_Cars_Car_Holder_fieldAccessorTable;
-  
+
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
@@ -2280,33 +3094,25 @@ public final class ComplexProtoBuf {
           internal_static_Game_Cars_Car_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Game_Cars_Car_descriptor,
-              new java.lang.String[] { "Model", "Vendor", "Speed", },
-              com.whg.protobuf.ComplexProtoBuf.Car.class,
-              com.whg.protobuf.ComplexProtoBuf.Car.Builder.class);
+              new java.lang.String[] { "Model", "Vendor", "Speed", });
           internal_static_Game_Cars_Car_Vendor_descriptor =
             internal_static_Game_Cars_Car_descriptor.getNestedTypes().get(0);
           internal_static_Game_Cars_Car_Vendor_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Game_Cars_Car_Vendor_descriptor,
-              new java.lang.String[] { "Name", "Address", },
-              com.whg.protobuf.ComplexProtoBuf.Car.Vendor.class,
-              com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Builder.class);
+              new java.lang.String[] { "Name", "Address", });
           internal_static_Game_Cars_Car_Vendor_Address_descriptor =
             internal_static_Game_Cars_Car_Vendor_descriptor.getNestedTypes().get(0);
           internal_static_Game_Cars_Car_Vendor_Address_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Game_Cars_Car_Vendor_Address_descriptor,
-              new java.lang.String[] { "Country", },
-              com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.class,
-              com.whg.protobuf.ComplexProtoBuf.Car.Vendor.Address.Builder.class);
+              new java.lang.String[] { "Country", });
           internal_static_Game_Cars_Car_Holder_descriptor =
             internal_static_Game_Cars_Car_descriptor.getNestedTypes().get(1);
           internal_static_Game_Cars_Car_Holder_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_Game_Cars_Car_Holder_descriptor,
-              new java.lang.String[] { "FirstName", "LastName", "Address", },
-              com.whg.protobuf.ComplexProtoBuf.Car.Holder.class,
-              com.whg.protobuf.ComplexProtoBuf.Car.Holder.Builder.class);
+              new java.lang.String[] { "FirstName", "LastName", "Address", });
           return null;
         }
       };
@@ -2315,6 +3121,6 @@ public final class ComplexProtoBuf {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
   }
-  
+
   // @@protoc_insertion_point(outer_class_scope)
 }

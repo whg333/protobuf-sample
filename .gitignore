@@ -1,4 +1,18 @@
 /target/
-.project
-.classpath
+/bin/
+
+# Idea
+.idea
+*.iml
+
+# Maven
+target/
+
+# Vim
+*.swp
+/bin/
+
+# Eclipse
 .settings/
+.classpath
+.project
