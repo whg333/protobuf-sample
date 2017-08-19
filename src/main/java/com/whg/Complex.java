@@ -17,6 +17,7 @@ public class Complex {
 		ComplexProtoBuf.Car.Builder car = ComplexProtoBuf.Car.newBuilder();
 		car.setModel("测试");
 		car.setVendor(vendor);
+		car.setSpeed(ComplexProtoBuf.Car.Speed.SUPERFAST);
 
 		byte[] bytes = car.build().toByteArray();
 		Parser.printHex(bytes);
@@ -35,6 +36,7 @@ public class Complex {
 		System.out.println(car.getVendor().getAddress().getCountry());
 		System.out.println(car.getVendor().getName());
 		System.out.println(car.getModel());
+		System.out.println(car.getSpeed());
 	}
 
 	/*
