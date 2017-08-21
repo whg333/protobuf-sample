@@ -28,6 +28,10 @@ public class Student {
 	}
 	
 	public byte[] toByteArray(){
+		return toProto().toByteArray();
+	}
+	
+	public StudentProto toProto(){
 		StudentProto.Builder builder = StudentProto.newBuilder();
 		builder.setId(id);
 		builder.setAge(age);
@@ -35,7 +39,7 @@ public class Student {
 		if(name != null){
 			builder.setName(name);
 		}
-		return builder.build().toByteArray();
+		return builder.build();
 	}
 	
 	public static Student parse(byte[] bytes){
@@ -50,7 +54,8 @@ public class Student {
 	
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", age=" + age + ", sex=" + sex + ", name=" + name + "]";
+		return "Student [id=" + id + ", age=" + age + 
+				", sex=" + sex + ", name=" + (name == null ? "" : name) + "]";
 	}
 	
 	public long getId() {
@@ -82,7 +87,7 @@ public class Student {
 		Student student = new Student();
 		student.setId(300);
 		student.setAge(30);
-		// student.setSex(true);
+		//student.setSex(true);
 		// student.setName("test");
 
 		byte[] bytes = student.toByteArray();

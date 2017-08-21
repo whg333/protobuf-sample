@@ -722,11 +722,774 @@ public final class StudentProtoBuf {
     // @@protoc_insertion_point(class_scope:tutorial.StudentProto)
   }
 
+  public interface ClassroomProtoOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // optional int32 id = 1;
+    /**
+     * <code>optional int32 id = 1;</code>
+     */
+    boolean hasId();
+    /**
+     * <code>optional int32 id = 1;</code>
+     */
+    int getId();
+
+    // repeated .tutorial.StudentProto students = 2;
+    /**
+     * <code>repeated .tutorial.StudentProto students = 2;</code>
+     */
+    java.util.List<com.whg.protobuf.StudentProtoBuf.StudentProto> 
+        getStudentsList();
+    /**
+     * <code>repeated .tutorial.StudentProto students = 2;</code>
+     */
+    com.whg.protobuf.StudentProtoBuf.StudentProto getStudents(int index);
+    /**
+     * <code>repeated .tutorial.StudentProto students = 2;</code>
+     */
+    int getStudentsCount();
+    /**
+     * <code>repeated .tutorial.StudentProto students = 2;</code>
+     */
+    java.util.List<? extends com.whg.protobuf.StudentProtoBuf.StudentProtoOrBuilder> 
+        getStudentsOrBuilderList();
+    /**
+     * <code>repeated .tutorial.StudentProto students = 2;</code>
+     */
+    com.whg.protobuf.StudentProtoBuf.StudentProtoOrBuilder getStudentsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code tutorial.ClassroomProto}
+   */
+  public static final class ClassroomProto extends
+      com.google.protobuf.GeneratedMessage
+      implements ClassroomProtoOrBuilder {
+    // Use ClassroomProto.newBuilder() to construct.
+    private ClassroomProto(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ClassroomProto(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ClassroomProto defaultInstance;
+    public static ClassroomProto getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ClassroomProto getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ClassroomProto(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              id_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                students_ = new java.util.ArrayList<com.whg.protobuf.StudentProtoBuf.StudentProto>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              students_.add(input.readMessage(com.whg.protobuf.StudentProtoBuf.StudentProto.PARSER, extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          students_ = java.util.Collections.unmodifiableList(students_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.whg.protobuf.StudentProtoBuf.internal_static_tutorial_ClassroomProto_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.whg.protobuf.StudentProtoBuf.internal_static_tutorial_ClassroomProto_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.whg.protobuf.StudentProtoBuf.ClassroomProto.class, com.whg.protobuf.StudentProtoBuf.ClassroomProto.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ClassroomProto> PARSER =
+        new com.google.protobuf.AbstractParser<ClassroomProto>() {
+      public ClassroomProto parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ClassroomProto(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ClassroomProto> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // optional int32 id = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private int id_;
+    /**
+     * <code>optional int32 id = 1;</code>
+     */
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional int32 id = 1;</code>
+     */
+    public int getId() {
+      return id_;
+    }
+
+    // repeated .tutorial.StudentProto students = 2;
+    public static final int STUDENTS_FIELD_NUMBER = 2;
+    private java.util.List<com.whg.protobuf.StudentProtoBuf.StudentProto> students_;
+    /**
+     * <code>repeated .tutorial.StudentProto students = 2;</code>
+     */
+    public java.util.List<com.whg.protobuf.StudentProtoBuf.StudentProto> getStudentsList() {
+      return students_;
+    }
+    /**
+     * <code>repeated .tutorial.StudentProto students = 2;</code>
+     */
+    public java.util.List<? extends com.whg.protobuf.StudentProtoBuf.StudentProtoOrBuilder> 
+        getStudentsOrBuilderList() {
+      return students_;
+    }
+    /**
+     * <code>repeated .tutorial.StudentProto students = 2;</code>
+     */
+    public int getStudentsCount() {
+      return students_.size();
+    }
+    /**
+     * <code>repeated .tutorial.StudentProto students = 2;</code>
+     */
+    public com.whg.protobuf.StudentProtoBuf.StudentProto getStudents(int index) {
+      return students_.get(index);
+    }
+    /**
+     * <code>repeated .tutorial.StudentProto students = 2;</code>
+     */
+    public com.whg.protobuf.StudentProtoBuf.StudentProtoOrBuilder getStudentsOrBuilder(
+        int index) {
+      return students_.get(index);
+    }
+
+    private void initFields() {
+      id_ = 0;
+      students_ = java.util.Collections.emptyList();
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, id_);
+      }
+      for (int i = 0; i < students_.size(); i++) {
+        output.writeMessage(2, students_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, id_);
+      }
+      for (int i = 0; i < students_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, students_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.whg.protobuf.StudentProtoBuf.ClassroomProto parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.whg.protobuf.StudentProtoBuf.ClassroomProto parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.whg.protobuf.StudentProtoBuf.ClassroomProto parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.whg.protobuf.StudentProtoBuf.ClassroomProto parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.whg.protobuf.StudentProtoBuf.ClassroomProto parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.whg.protobuf.StudentProtoBuf.ClassroomProto parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.whg.protobuf.StudentProtoBuf.ClassroomProto parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.whg.protobuf.StudentProtoBuf.ClassroomProto parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.whg.protobuf.StudentProtoBuf.ClassroomProto parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.whg.protobuf.StudentProtoBuf.ClassroomProto parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.whg.protobuf.StudentProtoBuf.ClassroomProto prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code tutorial.ClassroomProto}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.whg.protobuf.StudentProtoBuf.ClassroomProtoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.whg.protobuf.StudentProtoBuf.internal_static_tutorial_ClassroomProto_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.whg.protobuf.StudentProtoBuf.internal_static_tutorial_ClassroomProto_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.whg.protobuf.StudentProtoBuf.ClassroomProto.class, com.whg.protobuf.StudentProtoBuf.ClassroomProto.Builder.class);
+      }
+
+      // Construct using com.whg.protobuf.StudentProtoBuf.ClassroomProto.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getStudentsFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        id_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (studentsBuilder_ == null) {
+          students_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          studentsBuilder_.clear();
+        }
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.whg.protobuf.StudentProtoBuf.internal_static_tutorial_ClassroomProto_descriptor;
+      }
+
+      public com.whg.protobuf.StudentProtoBuf.ClassroomProto getDefaultInstanceForType() {
+        return com.whg.protobuf.StudentProtoBuf.ClassroomProto.getDefaultInstance();
+      }
+
+      public com.whg.protobuf.StudentProtoBuf.ClassroomProto build() {
+        com.whg.protobuf.StudentProtoBuf.ClassroomProto result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.whg.protobuf.StudentProtoBuf.ClassroomProto buildPartial() {
+        com.whg.protobuf.StudentProtoBuf.ClassroomProto result = new com.whg.protobuf.StudentProtoBuf.ClassroomProto(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.id_ = id_;
+        if (studentsBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+            students_ = java.util.Collections.unmodifiableList(students_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.students_ = students_;
+        } else {
+          result.students_ = studentsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.whg.protobuf.StudentProtoBuf.ClassroomProto) {
+          return mergeFrom((com.whg.protobuf.StudentProtoBuf.ClassroomProto)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.whg.protobuf.StudentProtoBuf.ClassroomProto other) {
+        if (other == com.whg.protobuf.StudentProtoBuf.ClassroomProto.getDefaultInstance()) return this;
+        if (other.hasId()) {
+          setId(other.getId());
+        }
+        if (studentsBuilder_ == null) {
+          if (!other.students_.isEmpty()) {
+            if (students_.isEmpty()) {
+              students_ = other.students_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureStudentsIsMutable();
+              students_.addAll(other.students_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.students_.isEmpty()) {
+            if (studentsBuilder_.isEmpty()) {
+              studentsBuilder_.dispose();
+              studentsBuilder_ = null;
+              students_ = other.students_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+              studentsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getStudentsFieldBuilder() : null;
+            } else {
+              studentsBuilder_.addAllMessages(other.students_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.whg.protobuf.StudentProtoBuf.ClassroomProto parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.whg.protobuf.StudentProtoBuf.ClassroomProto) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // optional int32 id = 1;
+      private int id_ ;
+      /**
+       * <code>optional int32 id = 1;</code>
+       */
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional int32 id = 1;</code>
+       */
+      public int getId() {
+        return id_;
+      }
+      /**
+       * <code>optional int32 id = 1;</code>
+       */
+      public Builder setId(int value) {
+        bitField0_ |= 0x00000001;
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 id = 1;</code>
+       */
+      public Builder clearId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        id_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // repeated .tutorial.StudentProto students = 2;
+      private java.util.List<com.whg.protobuf.StudentProtoBuf.StudentProto> students_ =
+        java.util.Collections.emptyList();
+      private void ensureStudentsIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          students_ = new java.util.ArrayList<com.whg.protobuf.StudentProtoBuf.StudentProto>(students_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.whg.protobuf.StudentProtoBuf.StudentProto, com.whg.protobuf.StudentProtoBuf.StudentProto.Builder, com.whg.protobuf.StudentProtoBuf.StudentProtoOrBuilder> studentsBuilder_;
+
+      /**
+       * <code>repeated .tutorial.StudentProto students = 2;</code>
+       */
+      public java.util.List<com.whg.protobuf.StudentProtoBuf.StudentProto> getStudentsList() {
+        if (studentsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(students_);
+        } else {
+          return studentsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .tutorial.StudentProto students = 2;</code>
+       */
+      public int getStudentsCount() {
+        if (studentsBuilder_ == null) {
+          return students_.size();
+        } else {
+          return studentsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .tutorial.StudentProto students = 2;</code>
+       */
+      public com.whg.protobuf.StudentProtoBuf.StudentProto getStudents(int index) {
+        if (studentsBuilder_ == null) {
+          return students_.get(index);
+        } else {
+          return studentsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .tutorial.StudentProto students = 2;</code>
+       */
+      public Builder setStudents(
+          int index, com.whg.protobuf.StudentProtoBuf.StudentProto value) {
+        if (studentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStudentsIsMutable();
+          students_.set(index, value);
+          onChanged();
+        } else {
+          studentsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tutorial.StudentProto students = 2;</code>
+       */
+      public Builder setStudents(
+          int index, com.whg.protobuf.StudentProtoBuf.StudentProto.Builder builderForValue) {
+        if (studentsBuilder_ == null) {
+          ensureStudentsIsMutable();
+          students_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          studentsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tutorial.StudentProto students = 2;</code>
+       */
+      public Builder addStudents(com.whg.protobuf.StudentProtoBuf.StudentProto value) {
+        if (studentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStudentsIsMutable();
+          students_.add(value);
+          onChanged();
+        } else {
+          studentsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tutorial.StudentProto students = 2;</code>
+       */
+      public Builder addStudents(
+          int index, com.whg.protobuf.StudentProtoBuf.StudentProto value) {
+        if (studentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureStudentsIsMutable();
+          students_.add(index, value);
+          onChanged();
+        } else {
+          studentsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tutorial.StudentProto students = 2;</code>
+       */
+      public Builder addStudents(
+          com.whg.protobuf.StudentProtoBuf.StudentProto.Builder builderForValue) {
+        if (studentsBuilder_ == null) {
+          ensureStudentsIsMutable();
+          students_.add(builderForValue.build());
+          onChanged();
+        } else {
+          studentsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tutorial.StudentProto students = 2;</code>
+       */
+      public Builder addStudents(
+          int index, com.whg.protobuf.StudentProtoBuf.StudentProto.Builder builderForValue) {
+        if (studentsBuilder_ == null) {
+          ensureStudentsIsMutable();
+          students_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          studentsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tutorial.StudentProto students = 2;</code>
+       */
+      public Builder addAllStudents(
+          java.lang.Iterable<? extends com.whg.protobuf.StudentProtoBuf.StudentProto> values) {
+        if (studentsBuilder_ == null) {
+          ensureStudentsIsMutable();
+          super.addAll(values, students_);
+          onChanged();
+        } else {
+          studentsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tutorial.StudentProto students = 2;</code>
+       */
+      public Builder clearStudents() {
+        if (studentsBuilder_ == null) {
+          students_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+        } else {
+          studentsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tutorial.StudentProto students = 2;</code>
+       */
+      public Builder removeStudents(int index) {
+        if (studentsBuilder_ == null) {
+          ensureStudentsIsMutable();
+          students_.remove(index);
+          onChanged();
+        } else {
+          studentsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .tutorial.StudentProto students = 2;</code>
+       */
+      public com.whg.protobuf.StudentProtoBuf.StudentProto.Builder getStudentsBuilder(
+          int index) {
+        return getStudentsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .tutorial.StudentProto students = 2;</code>
+       */
+      public com.whg.protobuf.StudentProtoBuf.StudentProtoOrBuilder getStudentsOrBuilder(
+          int index) {
+        if (studentsBuilder_ == null) {
+          return students_.get(index);  } else {
+          return studentsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .tutorial.StudentProto students = 2;</code>
+       */
+      public java.util.List<? extends com.whg.protobuf.StudentProtoBuf.StudentProtoOrBuilder> 
+           getStudentsOrBuilderList() {
+        if (studentsBuilder_ != null) {
+          return studentsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(students_);
+        }
+      }
+      /**
+       * <code>repeated .tutorial.StudentProto students = 2;</code>
+       */
+      public com.whg.protobuf.StudentProtoBuf.StudentProto.Builder addStudentsBuilder() {
+        return getStudentsFieldBuilder().addBuilder(
+            com.whg.protobuf.StudentProtoBuf.StudentProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .tutorial.StudentProto students = 2;</code>
+       */
+      public com.whg.protobuf.StudentProtoBuf.StudentProto.Builder addStudentsBuilder(
+          int index) {
+        return getStudentsFieldBuilder().addBuilder(
+            index, com.whg.protobuf.StudentProtoBuf.StudentProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .tutorial.StudentProto students = 2;</code>
+       */
+      public java.util.List<com.whg.protobuf.StudentProtoBuf.StudentProto.Builder> 
+           getStudentsBuilderList() {
+        return getStudentsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.whg.protobuf.StudentProtoBuf.StudentProto, com.whg.protobuf.StudentProtoBuf.StudentProto.Builder, com.whg.protobuf.StudentProtoBuf.StudentProtoOrBuilder> 
+          getStudentsFieldBuilder() {
+        if (studentsBuilder_ == null) {
+          studentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.whg.protobuf.StudentProtoBuf.StudentProto, com.whg.protobuf.StudentProtoBuf.StudentProto.Builder, com.whg.protobuf.StudentProtoBuf.StudentProtoOrBuilder>(
+                  students_,
+                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  getParentForChildren(),
+                  isClean());
+          students_ = null;
+        }
+        return studentsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:tutorial.ClassroomProto)
+    }
+
+    static {
+      defaultInstance = new ClassroomProto(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:tutorial.ClassroomProto)
+  }
+
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_tutorial_StudentProto_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_tutorial_StudentProto_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_tutorial_ClassroomProto_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_tutorial_ClassroomProto_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -738,8 +1501,10 @@ public final class StudentProtoBuf {
     java.lang.String[] descriptorData = {
       "\n\rStudent.proto\022\010tutorial\"B\n\014StudentProt" +
       "o\022\n\n\002id\030\001 \001(\003\022\013\n\003age\030\002 \001(\005\022\013\n\003sex\030\003 \001(\010\022" +
-      "\014\n\004name\030\004 \001(\tB#\n\020com.whg.protobufB\017Stude" +
-      "ntProtoBuf"
+      "\014\n\004name\030\004 \001(\t\"F\n\016ClassroomProto\022\n\n\002id\030\001 " +
+      "\001(\005\022(\n\010students\030\002 \003(\0132\026.tutorial.Student" +
+      "ProtoB#\n\020com.whg.protobufB\017StudentProtoB" +
+      "uf"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -752,6 +1517,12 @@ public final class StudentProtoBuf {
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_tutorial_StudentProto_descriptor,
               new java.lang.String[] { "Id", "Age", "Sex", "Name", });
+          internal_static_tutorial_ClassroomProto_descriptor =
+            getDescriptor().getMessageTypes().get(1);
+          internal_static_tutorial_ClassroomProto_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_tutorial_ClassroomProto_descriptor,
+              new java.lang.String[] { "Id", "Students", });
           return null;
         }
       };

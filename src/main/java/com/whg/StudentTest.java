@@ -12,7 +12,7 @@ public class StudentTest {
 		StudentProtoBuf.StudentProto.Builder builder = StudentProtoBuf.StudentProto.newBuilder();
 		builder.setId(300);
 		builder.setAge(30);
-		// studentProtoBuf.setSex(true);
+		builder.setSex(true);
 		// studentProtoBuf.setName("test");
 
 		byte[] bytes = builder.build().toByteArray();
@@ -27,10 +27,10 @@ public class StudentTest {
 			System.out.println(fieldDescriptor.getIndex() + ":" + fieldDescriptor.getName());
 		}
 
-		builder = StudentProtoBuf.StudentProto.newBuilder();
-		builder.mergeFrom(bytes);
-		System.out.println(builder.getId());
-		System.out.println(builder.getAge());
+		StudentProtoBuf.StudentProto.Builder builder2 = StudentProtoBuf.StudentProto.newBuilder();
+		builder2.mergeFrom(bytes);
+		System.out.println(builder2.getId());
+		System.out.println(builder2.getAge());
 	}
 
 	/*
