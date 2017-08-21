@@ -4,15 +4,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.dyuproject.protostuff.LinkedBuffer;
+import com.dyuproject.protostuff.ProtobufIOUtil;
+import com.dyuproject.protostuff.Schema;
+import com.dyuproject.protostuff.runtime.RuntimeSchema;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.whg.protobuf.StudentProtoBuf;
 import com.whg.protobuf.StudentProtoBuf.StudentProto;
 
-import io.protostuff.LinkedBuffer;
-import io.protostuff.ProtobufIOUtil;
-import io.protostuff.Schema;
-import io.protostuff.runtime.RuntimeSchema;
+import net.webby.protostuff.runtime.Generators;
 
 public class ProtostuffTest {
 
@@ -23,6 +24,9 @@ public class ProtostuffTest {
 
 	private static void testClassroom() {
 		Schema<Classroom> schema = RuntimeSchema.getSchema(Classroom.class);
+		
+		String content = Generators.newProtoGenerator(schema).generate();
+		System.out.println(content);
 
 		Classroom classroom = new Classroom();
 		classroom.setId(666);
@@ -44,25 +48,49 @@ public class ProtostuffTest {
 
 		classroom.setStudents(students);
 		
+		int testCount = 1000000;
+		
 		byte[] bytes = classroom.toByteArray();
-		Parser.printHex(bytes);
-		Parser.printInt(bytes);
-		Parser.printBinary(bytes);
+		long begin = System.currentTimeMillis();
+		for(int i=0;i<testCount;i++){
+			bytes = classroom.toByteArray();
+		}
+		System.out.println(System.currentTimeMillis()-begin);
+		//Parser.printHex(bytes);
+		//Parser.printInt(bytes);
+		//Parser.printBinary(bytes);
 
 		//这里必须使用ProtobufIOUtil而不是ProtostuffIOUtil
 		//因为使用ProtostuffIOUtil的话，涉及到repeated嵌套对象结构的protobuf，
 		//其产生的字节码数组和原生protobuf文件工具类产生的不一致，这是个严重的问题！
-		LinkedBuffer buffer = LinkedBuffer.allocate();
-		byte[] bytes2 = ProtobufIOUtil.toByteArray(classroom, schema, buffer);
+		LinkedBuffer buffer = LinkedBuffer.allocate(512);
+		
+		byte[] bytes2 = null;
+		begin = System.currentTimeMillis();
+		for(int i=0;i<testCount;i++){
+			bytes2 = ProtobufIOUtil.toByteArray(classroom, schema, buffer);
+			buffer.clear();
+		}
+		System.out.println(System.currentTimeMillis()-begin);
 		
 		System.out.println(Arrays.equals(bytes, bytes2));
 		
-		Classroom classroom2 = schema.newMessage();
-		ProtobufIOUtil.mergeFrom(bytes, classroom2, schema);
-		System.out.println("Protostuff\n" + classroom2);
+		Classroom classroom2 = null;
+		begin = System.currentTimeMillis();
+		for(int i=0;i<testCount;i++){
+			classroom2 = Classroom.parse(bytes);
+		}
+		System.out.println(System.currentTimeMillis()-begin);
+		System.out.println("JavaClass\n" + classroom2);
 		
-		Classroom classroom3 = Classroom.parse(bytes);
-		System.out.println("JavaClass\n" + classroom3);
+		Classroom classroom3 = null;
+		begin = System.currentTimeMillis();
+		for(int i=0;i<testCount;i++){
+			classroom3 = schema.newMessage();
+			ProtobufIOUtil.mergeFrom(bytes, classroom3, schema);
+		}
+		System.out.println(System.currentTimeMillis()-begin);
+		System.out.println("Protostuff\n" + classroom3);
 	}
 
 	private static void testStudent() throws InvalidProtocolBufferException {
@@ -82,7 +110,7 @@ public class ProtostuffTest {
 		System.out.println(Arrays.equals(bytes, bytes2));
 		
 		Schema<Student> schema = RuntimeSchema.getSchema(Student.class);
-		LinkedBuffer buffer = LinkedBuffer.allocate();
+		LinkedBuffer buffer = LinkedBuffer.allocate(512);
 		byte[] bytes3 = ProtobufIOUtil.toByteArray(student, schema, buffer);
 		System.out.println(Arrays.equals(bytes, bytes3));
 		
