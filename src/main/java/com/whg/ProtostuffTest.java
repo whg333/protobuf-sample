@@ -55,7 +55,7 @@ public class ProtostuffTest {
 		for(int i=0;i<testCount;i++){
 			bytes = classroom.toByteArray();
 		}
-		System.out.println(System.currentTimeMillis()-begin);
+		System.out.println("JavaClass序列化:"+(System.currentTimeMillis()-begin));
 		//Parser.printHex(bytes);
 		//Parser.printInt(bytes);
 		//Parser.printBinary(bytes);
@@ -71,7 +71,7 @@ public class ProtostuffTest {
 			bytes2 = ProtobufIOUtil.toByteArray(classroom, schema, buffer);
 			buffer.clear();
 		}
-		System.out.println(System.currentTimeMillis()-begin);
+		System.out.println("Protostuff序列化:"+(System.currentTimeMillis()-begin));
 		
 		System.out.println(Arrays.equals(bytes, bytes2));
 		
@@ -80,7 +80,7 @@ public class ProtostuffTest {
 		for(int i=0;i<testCount;i++){
 			classroom2 = Classroom.parse(bytes);
 		}
-		System.out.println(System.currentTimeMillis()-begin);
+		System.out.println("JavaClass反序列化"+(System.currentTimeMillis()-begin));
 		System.out.println("JavaClass\n" + classroom2);
 		
 		Classroom classroom3 = null;
@@ -89,7 +89,7 @@ public class ProtostuffTest {
 			classroom3 = schema.newMessage();
 			ProtobufIOUtil.mergeFrom(bytes, classroom3, schema);
 		}
-		System.out.println(System.currentTimeMillis()-begin);
+		System.out.println("Protostuff反序列化"+(System.currentTimeMillis()-begin));
 		System.out.println("Protostuff\n" + classroom3);
 	}
 
